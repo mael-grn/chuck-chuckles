@@ -9,14 +9,11 @@
 
   <body>
     <header>
-      <h1>Recherche d'offres d'emploi</h1>
+      <h1>Chunk Chuckles</h1>
 
       <p id="explication">
-        Cette page permet de rechercher des offres d'emploi via l'API publique
-        de <a href="https://www.indeed.fr/" target="_blank">indeed.fr</a>.<br />
-        Saisir le nom d'une ville, d'un poste, ... pour rechercher les postes
-        correspondants, et enregistrer vos recherches favorites pour les
-        retrouver facilement.
+        Utilisez cette page pour découvrir des blagues sur Chuck Norris. <br />
+        Entrez un mot-clé ou sélectionnez une catégorie pour commencer votre recherche.
       </p>
     </header>
     <hr />
@@ -26,7 +23,7 @@
       <section id="section-recherche">
         <div id="bloc-recherche">
           <!-- Champ de recherche -->
-          <input type="text" placeholder="Que cherchez-vous ?" />
+          <input id="input-text-response" type="text" placeholder="Lancer vous?" oninput="getValue()"/>
 
           <!-- Boutons -->
           <button
@@ -114,5 +111,8 @@
         <p class="info-vide">(Aucune recherche favorite)</p>
       </section>
     </main>
+    <script src="js/main.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/modelJoke.js"></script>
   </body>
 </html>

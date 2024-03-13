@@ -1,73 +1,66 @@
-# ChuckNorrisJokes
+# ChuckNorrisJokes - Interface Web Vanilla JS
 
 ## Description
 
-Bienvenue sur le projet ChuckNorrisJokes! Ce site web est votre destination ultime pour obtenir une dose quotidienne de rires grâce à une collection infinie de blagues sur Chuck Norris. Peu importe si vous avez besoin de vous remonter le moral, de divertir vos amis, ou simplement de profiter d'un bon moment de détente, nos blagues Chuck Norris sont là pour égayer votre journée.
+Ce projet fournit une interface web simple et intuitive pour explorer et s'amuser avec des blagues sur Chuck Norris. Il a été développé en utilisant uniquement HTML, CSS, et JavaScript "Vanilla", sans l'utilisation de frameworks ou de bibliothèques externes. Cette initiative a pour but de démontrer l'application pratique des connaissances en JavaScript, AJAX, et JSON pour intégrer et manipuler des données provenant d'une API publique, ici l'API de blagues sur Chuck Norris.
+
+## Objectifs
+
+- Utiliser uniquement HTML, CSS, et JavaScript "Vanilla".
+- Pratiquer les appels AJAX pour consommer une API publique.
+- Mettre en œuvre la manipulation de JSON pour afficher dynamiquement les données.
+- Appliquer les principes de base du design web pour une interface utilisateur agréable.
+- Familiariser avec Git et GitHub pour le versionnage et le partage du code.
 
 ## Fonctionnalités
 
-- **Affichage aléatoire de blagues :** À chaque visite ou à chaque actualisation de la page, une blague Chuck Norris aléatoire s'affiche.
-- **Catégories de blagues :** Les blagues sont classées en différentes catégories pour que vous puissiez choisir le type d'humour que vous préférez.
-- **Partage sur les réseaux sociaux :** Vous avez trouvé une blague qui vous a particulièrement fait rire ? Partagez-la en un clic sur vos réseaux sociaux favoris.
-- **Contribution des utilisateurs :** Les utilisateurs peuvent soumettre leurs propres blagues Chuck Norris, enrichissant ainsi la collection après une modération.
+- **Affichage aléatoire de blagues :** Chaque fois que l'utilisateur charge ou rafraîchit la page, une nouvelle blague sur Chuck Norris est affichée.
+- **Bouton pour nouvelle blague :** Un bouton permet aux utilisateurs de charger une nouvelle blague sans avoir à rafraîchir la page.
+- **Design responsive :** Le site est accessible et agréable à consulter sur des appareils de différentes tailles, des smartphones aux écrans larges.
+- **Simplicité et rapidité :** Grâce à l'utilisation de technologies de base, le site est extrêmement rapide et léger.
 
 ## Technologies utilisées
 
-- **Frontend :** HTML, CSS, JavaScript (avec frameworks comme React ou Vue.js pour une interface utilisateur dynamique)
-- **Backend :** Node.js avec Express pour gérer les requêtes API, et une base de données MongoDB pour stocker les blagues.
-- **API :** Utilisation d'une API externe pour les blagues Chuck Norris pour initialiser la base de données avec un contenu varié.
+- **HTML :** Structure de base de la page web.
+- **CSS :** Mise en forme et style visuel de la page.
+- **JavaScript "Vanilla" :** Logique pour les requêtes AJAX, la manipulation du DOM, et l'intégration avec l'API de blagues Chuck Norris.
 
-## Installation
+## Installation et utilisation
 
-Pour installer et exécuter ce projet localement, suivez ces étapes :
+Pour utiliser ce projet, suivez ces étapes :
 
-1. Clonez le dépôt sur votre machine locale en utilisant :
+1. Clonez le dépôt sur votre machine locale :
 
-```
+```bash
 git clone https://github.com/votreNomUtilisateur/ChuckNorrisJokes.git
 ```
 
-2. Installez les dépendances nécessaires en exécutant :
+2. Ouvrez le fichier `index.html` dans votre navigateur web.
 
-```
-npm install
-```
-
-3. Lancez l'application :
-
-```
-npm start
-```
-
-4. Ouvrez votre navigateur et accédez à `http://localhost:3000` pour voir l'application en action.
+Il n'est pas nécessaire d'exécuter un serveur web local pour ce projet, car il ne dépend pas de backend et les requêtes à l'API sont faites directement depuis le navigateur de l'utilisateur.
 
 ## Contribuer
 
-Nous encourageons les contributions ! Si vous avez des idées de nouvelles fonctionnalités, des corrections de bugs ou des améliorations, n'hésitez pas à soumettre une pull request ou à ouvrir un issue.
+Les contributions sont les bienvenues ! Si vous avez des suggestions d'amélioration, des corrections de bugs, ou de nouvelles fonctionnalités, n'hésitez pas à ouvrir une issue ou à proposer une pull request.
 
-## Changements et idées à apporter
+## Changements et améliorations futures
 
-### Changements à apporter
+### À apporter
 
-- **Internationalisation :** Ajouter la prise en charge de plusieurs langues pour rendre le site accessible à un public plus large.
-- **Système de notation :** Permettre aux utilisateurs de noter les blagues, ce qui aidera à identifier et à mettre en avant les meilleures.
+- **Internationalisation :** Ajouter la prise en charge de plusieurs langues.
+- **Filtrage des blagues :** Permettre aux utilisateurs de filtrer les blagues selon divers critères, tels que la popularité ou les catégories.
 
-### Idées à apporter
+### Idées à explorer
 
-- **Mode nuit :** Implémenter un mode nuit pour réduire la fatigue oculaire lors de la consultation du site en soirée ou dans des environnements sombres.
-- **Application mobile :** Développer une application mobile pour permettre un accès facile et rapide aux blagues à tout moment.
-
-### Idées réalisées
-
-- **Catégories de blagues :** Implémentation réussie des catégories permettant aux utilisateurs de filtrer les blagues selon leurs préférences.
-- **Partage sur les réseaux sociaux :** Les utilisateurs peuvent désormais partager facilement leurs blagues favorites sur diverses plateformes sociales.
+- **Sauvegarde des favoris :** Offrir la possibilité de sauvegarder les blagues favorites localement dans le navigateur.
+- **Mode sombre :** Implementer un commutateur pour un mode sombre afin d'améliorer le confort visuel en environnement peu lumineux.
 
 ## Licence
 
-Ce projet est sous licence MIT. Pour plus d'informations, consultez le fichier `LICENSE` inclus.
+Ce projet est distribué sous la licence MIT. Pour plus de détails, veuillez consulter le fichier `LICENSE` inclus dans ce dépôt.
 
 ---
 
-Nous espérons que vous apprécierez naviguer sur ChuckNorrisJokes autant que nous avons aimé le créer. Préparez-vous à rire !
+Amusez-vous bien avec ChuckNorrisJokes et préparez-vous à découvrir les blagues les plus hilarantes sur Chuck Norris en ligne!
 
-lien vers l'api : https://api.chucknorris.io/
+Lien vers l'API : [https://api.chucknorris.io/](https://api.chucknorris.io/)
