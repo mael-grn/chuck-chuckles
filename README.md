@@ -61,6 +61,6 @@ Ce projet est distribué sous la licence MIT. Pour plus de détails, veuillez co
 
 ---
 
-Amusez-vous bien avec ChuckNorrisJokes et préparez-vous à découvrir les blagues les plus hilarantes sur Chuck Norris en ligne!
+Amusez-vous bien avec ChuckNorrisJokes et préparez-vous à découvrir les blagues les plus hilarantes sur Chuck Norris en ligne !
 
 Lien vers l'API : [https://api.chucknorris.io/](https://api.chucknorris.io/)
