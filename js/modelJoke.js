@@ -25,9 +25,4 @@ class Joke {
     getUrl() {
         return "https://api.chucknorris.io/jokes/" + this._id;
     }
-
-    getValue() {
-        var inputValue = document.getElementById('input-text-response').value;
-        console.log(inputValue);
-    }
 }
