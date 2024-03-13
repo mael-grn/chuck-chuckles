@@ -1,4 +1,6 @@
-function getValue() {
-    var inputValue = document.getElementById('input-text-response').value;
-    console.log(inputValue);
-  }
+let modelJoke = new Joke;
+
+
+view.btnRecherche.addEventListener("click", () => {
+    modelJoke.getValue();
+});
