@@ -55,3 +55,5 @@ class Joke {
 
 
 }
+
+export default Joke;

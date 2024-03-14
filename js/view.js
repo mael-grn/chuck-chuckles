@@ -7,3 +7,5 @@ const view = {
     inputRecherche: document.getElementById("input-text-response"),
 
   };
+
+export default view;

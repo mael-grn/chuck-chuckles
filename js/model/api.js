@@ -1,3 +1,5 @@
+import Joke from './joke.js';
+
 /**
  * class objet Permettant de faire les appels API
  */
@@ -52,11 +54,11 @@ class Api {
      * @returns les données de la blague au format JSON
      */
     async #fetchData() {
-        
         try {
 
             //on récupère les données
             const url = this.#urlReq + encodeURIComponent(this.#query);
+
             const response = await fetch(url);
 
             //on traite le cas d'erreur
@@ -75,32 +77,33 @@ class Api {
      * retourne un objet joke
      * @param {*} query la recherche saisie par l'utilisateur
      */
-    async searchJoke(query) {
+    searchJoke(query) {
 
         //on mets à jour la query dans le modèle
         this.updateQuery(query);
-        try {
 
-            //on effectue la requete pour recuperer les données
-            let data = await fetchData();
-
-            //si aucune données récupérées, alors on renvoie une fausse blague comportant un message d'erreur
-            if (data.total == 0) {
-                return new Joke(-1, -1, "Aucune blague n'a été trouvée");
-            } else {
-                //si des blagues sont trouvées, on parcours la liste de blague, on créé objets et on les ajoutes à une liste
-                let jokeList = [];
-                data.result.forEach(element => {
-                    let joke = new Joke(element.id, element.created_at, element.value);
-                    jokeList.push(joke);
+        //on retourne une promesse directement
+        return new Promise((resolve, reject) => {
+            this.#fetchData()
+                .then(data => {
+                    if (data.total == 0) {
+                        resolve([new Joke(-1, -1, "Aucune blague n'a été trouvée")]);
+                    } else {
+                        let jokeList = [];
+                        data.result.forEach(element => {
+                            let joke = new Joke(element.id, element.created_at, element.value);
+                            jokeList.push(joke);
+                        });
+                        resolve(jokeList);
+                    }
+                })
+                .catch(error => {
+                    //en cas d'erreur, un renvoi une blague factice contenant le message d'erreur
+                    resolve([new Joke(-1, -1, "Une erreur s'est produite")]);
                 });
-                return jokeList;
-            }
-        } catch (error) {
-
-            //en cas d'erreur, un renvoi une blague factice contenant le message d'erreur
-            return new Joke(-1, -1, "Une erreur s'est produite");
-        }
+        });
     }
 
 }
+
+export default Api;
