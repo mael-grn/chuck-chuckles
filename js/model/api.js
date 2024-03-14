@@ -87,11 +87,11 @@ class Api {
             this.#fetchData()
                 .then(data => {
                     if (data.total == 0) {
-                        resolve([new Joke(-1, -1, "Aucune blague n'a été trouvée")]);
+                        resolve([new Joke(-1, "Aucune blague n'a été trouvée")]);
                     } else {
                         let jokeList = [];
                         data.result.forEach(element => {
-                            let joke = new Joke(element.id, element.created_at, element.value);
+                            let joke = new Joke(element.id, element.value, element.created_at);
                             jokeList.push(joke);
                         });
                         resolve(jokeList);
@@ -99,7 +99,7 @@ class Api {
                 })
                 .catch(error => {
                     //en cas d'erreur, un renvoi une blague factice contenant le message d'erreur
-                    resolve([new Joke(-1, -1, "Une erreur s'est produite")]);
+                    resolve([new Joke(-1, "Une erreur s'est produite")]);
                 });
         });
     }

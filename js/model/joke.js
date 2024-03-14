@@ -15,7 +15,7 @@ class Joke {
     /**
      * constructeur de la classe
      */
-    constructor(id, dateCreation, content) {
+    constructor(id, content, dateCreation = "") {
         this.#id = id;
         this.#dateCreation = dateCreation;
         this.#content = content;
