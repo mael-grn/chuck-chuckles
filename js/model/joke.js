@@ -14,12 +14,11 @@ class Joke {
 
     /**
      * constructeur de la classe
-     * @param {*} joke : la blague au format json
      */
-    constructor(joke) {
-        this.#id = joke.id;
-        this.#dateCreation = joke.created_at;
-        this.#content = joke.value;
+    constructor(id, dateCreation, content) {
+        this.#id = id;
+        this.#dateCreation = dateCreation;
+        this.#content = content;
     }
 
     /**
