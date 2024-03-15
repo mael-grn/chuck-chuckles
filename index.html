@@ -4,9 +4,9 @@
     <title>Chuck Chuckles</title>
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon-cn.ico" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
   </head>
 
   <body>
@@ -30,11 +30,27 @@
         Découvrez l'univers <span id="orange">légendaire</span> de
         <span id="Chuck-Norris-header">Chuck Norris</span>
       </h1>
-
       <p id="explication">
         Plongez dans les blagues hilarantes mettant en scène Chuck Norris et
         préparez-vous à rire aux éclats.
       </p>
+      <button>
+        <p>Recherche</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="4"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          ></path>
+        </svg>
+      </button>
     </header>
     <main id="conteneur">
       <div class="container">
@@ -43,12 +59,11 @@
             <h1>
               Laissez votre <span id="orange">imagination</span> vous guider
             </h1>
-            <p>
+            <p id="description">
               Utilisez notre fonction de recherche unique pour trouver des
               blagues sur Chuck Norris en utilisant des mots-clés ou des
               catégories.
             </p>
-            <button id="btn-recherche-header">Commencer à cherche</button>
             <ul class="categorie">
               <li class="joke-categorie">
                 <a href="#">Blagues sur Chuck Norris classées par catégories</a>
@@ -66,30 +81,46 @@
       </div>
       <div class="container">
         <section id="second">
-          <img src="images/attente-ajax.gif" alt="une image" />
+          <img src="images/image-2.png" alt="une image" />
           <section id="imagination_joke">
             <h1>
               Explorer les meilleurs blagues par
               <span id="orange">catégorie</span>
             </h1>
-            <p>
+            <p id="description">
               Sélectionnez une catégorie pour commencer à visualiser les
               meilleurs blagues !
             </p>
-            <button id="btn-categorie">Catégories</button>
+            <button>
+              <p>Recherche</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                ></path>
+              </svg>
+            </button>
           </section>
         </section>
       </div>
       <hr />
-      <footer>
-        <p>© 2023 Relume. Tous droits réservés.</p>
-        <ul class="list-footer">
-          <li><a href="#">Politique de confidentialité</a></li>
-          <li><a href="#">Conditions d'utilisation</a></li>
-          <li><a href="#">Paramètres des cookies</a></li>
-        </ul>
-      </footer>
     </main>
+    <footer>
+      <p>© 2023 Relume. Tous droits réservés.</p>
+      <ul class="list-footer">
+        <li><a href="#">Politique de confidentialité</a></li>
+        <li><a href="#">Conditions d'utilisation</a></li>
+        <li><a href="#">Paramètres des cookies</a></li>
+      </ul>
+    </footer>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>
