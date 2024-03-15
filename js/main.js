@@ -1,6 +1,6 @@
-import Api from './model/api.js';
-import view from './view.js';
-import { generateJokeElement } from './creator.js';
+import Api from "./model/api.js";
+import view from "./view.js";
+import { generateJokeElement } from "./creator.js";
 
 const api = new Api();
 
@@ -9,31 +9,28 @@ const api = new Api();
  * @param {*} result une liste de blague à afficher
  */
 function displayResult(result) {
-    //pour chaque blague
-    //on supprime le resultat précedent
-    while (view.blocResultat.firstChild) {
-        view.blocResultat.removeChild(view.blocResultat.firstChild);
-    }
-    result.forEach(joke => {
-        
-        //on genere l'element html de la blague
-        let jokeElement = generateJokeElement(joke);
-        //on l'affiche
-        view.blocResultat.appendChild(jokeElement);
-    });
+  //pour chaque blague
+  //on supprime le resultat précedent
+  while (view.blocResultat.firstChild) {
+    view.blocResultat.removeChild(view.blocResultat.firstChild);
+  }
+  result.forEach((joke) => {
+    //on genere l'element html de la blague
+    let jokeElement = generateJokeElement(joke);
+    //on l'affiche
+    view.blocResultat.appendChild(jokeElement);
+  });
 }
 
 /**
  * listener d'evenement de click sur le bouton de recherche
  */
 view.btnRecherche.addEventListener("click", () => {
-    var inputValue = document.getElementById('input-text-response').value;
-    console.log("input value : " + inputValue);
+  var inputValue = document.getElementById("input-text-response").value;
+  console.log("input value : " + inputValue);
 
-    //on effectue le recherche et on affiche les resultats
-    api.searchJoke(inputValue).then(jokes => {
-        displayResult(jokes);
-    });
+  //on effectue le recherche et on affiche les resultats
+  api.searchJoke(inputValue).then((jokes) => {
+    displayResult(jokes);
+  });
 });
-
-

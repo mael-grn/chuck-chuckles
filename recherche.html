@@ -3,30 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/recherche.css" />
     <title>Document</title>
   </head>
   <body>
+    <nav>
+      <a href="#">LOGO</a>
+      <ul>
+        <li class="Accueil">
+          <a href="#">Accueil</a>
+        </li>
+        <li class="Categorie">
+          <a href="categorie">Catégorie</a>
+        </li>
+        <li class="Recherche">
+          <a href="recherche">Recherche</a>
+        </li>
+      </ul>
+    </nav>
+    <hr />
     <!-- Section de recherche (avec résultats) -->
     <section id="section-recherche">
+      <div id="entête">
+        <h1>Recherche</h1>
+        <p id="description">
+          Utilisez cette page pour découvrir des blagues sur Chuck Norris.
+          <br />
+          Entrez un mot-clé ou sélectionnez une catégorie pour commencer votre
+          recherche.
+        </p>
+      </div>
       <div id="bloc-recherche">
-        <!-- Champ de recherche -->
-        <input
-          id="input-text-response"
-          type="text"
-          placeholder="Lancez-vous ?"
-        />
-
-        <!-- Boutons -->
-        <button
-          id="btn-lancer-recherche"
-          type="button"
-          class="btn_clicable"
-          title="Lancer la recherche"
-        >
-          <!-- Icone Loupe (provenant de flaticon.com) -->
-          <img src="images/loupe.svg" alt="Loupe pour recherche" width="22" />
-        </button>
+        <div class="search">
+          <input
+            id="input-text-response"
+            type="text"
+            class="search__input"
+            placeholder="Type your text"
+          />
+          <button class="search__button" id="btn-lancer-recherche">
+            <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
+              <g>
+                <path
+                  d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                ></path>
+              </g>
+            </svg>
+          </button>
+        </div>
 
         <button
           id="btn-favoris"
@@ -36,7 +62,12 @@
         >
           <!-- Icone étoile vide
             (qui indique que la recherche ne fait pas partie des favoris) -->
-          <img src="images/etoile-vide.svg" alt="Etoile vide" width="22" />
+          <img
+            src="images/star-vide.png"
+            alt="Etoile vide"
+            width="30"
+            onclick="toggleStar(this)"
+          />
 
           <!-- Icone étoile pleine
             (qui indique que la recherche fait partie des favoris) -->
@@ -95,5 +126,24 @@
       </ul>
       <p class="info-vide">(Aucune recherche favorite)</p>
     </section>
+    <hr />
+    <footer>
+      <p>© 2023 Relume. Tous droits réservés.</p>
+      <ul class="list-footer">
+        <li><a href="#">Politique de confidentialité</a></li>
+        <li><a href="#">Conditions d'utilisation</a></li>
+        <li><a href="#">Paramètres des cookies</a></li>
+      </ul>
+    </footer>
   </body>
+  <script type="module" src="js/main.js"></script>
+  <script>
+    function toggleStar(img) {
+      if (img.src.includes("star-vide")) {
+        img.src = "images/start-pleine.png";
+      } else {
+        img.src = "images/star-vide.png";
+      }
+    }
+  </script>
 </html>
