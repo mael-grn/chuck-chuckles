@@ -37,6 +37,10 @@ button {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   /* Vos styles existants */
   --primary-color: #111;
