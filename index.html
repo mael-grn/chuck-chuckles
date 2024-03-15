@@ -5,108 +5,90 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" type="image/x-icon" href="favicon-cn.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="footer.css" />
   </head>
 
   <body>
+    <nav>
+      <a href="#">LOGO</a>
+      <ul>
+        <li class="Accueil">
+          <a href="#">Accueil</a>
+        </li>
+        <li class="Categorie">
+          <a href="categorie">Catégorie</a>
+        </li>
+        <li class="Recherche">
+          <a href="recherche">Recherche</a>
+        </li>
+      </ul>
+    </nav>
+    <hr />
     <header>
-      <h1>Chunk Chuckles</h1>
+      <h1>
+        Découvrez l'univers <span id="orange">légendaire</span> de
+        <span id="Chuck-Norris-header">Chuck Norris</span>
+      </h1>
 
       <p id="explication">
-        Utilisez cette page pour découvrir des blagues sur Chuck Norris. <br />
-        Entrez un mot-clé ou sélectionnez une catégorie pour commencer votre recherche.
+        Plongez dans les blagues hilarantes mettant en scène Chuck Norris et
+        préparez-vous à rire aux éclats.
       </p>
     </header>
-    <hr />
-
     <main id="conteneur">
-      <!-- Section de recherche (avec résultats) -->
-      <section id="section-recherche">
-        <div id="bloc-recherche">
-          <!-- Champ de recherche -->
-          <input id="input-text-response" type="text" placeholder="Lancer vous?"/>
-
-          <!-- Boutons -->
-          <button
-            id="btn-lancer-recherche"
-            type="button"
-            class="btn_clicable"
-            title="Lancer la recherche"
-          >
-            <!-- Icone Loupe (provenant de flaticon.com) -->
-            <img src="images/loupe.svg" alt="Loupe pour recherche" width="22" />
-          </button>
-
-          <button
-            id="btn-favoris"
-            type="button"
-            disabled
-            title="Ajouter la recherche aux favoris"
-          >
-            <!-- Icone étoile vide
-							(qui indique que la recherche ne fait pas partie des favoris) -->
-            <img src="images/etoile-vide.svg" alt="Etoile vide" width="22" />
-
-            <!-- Icone étoile pleine
-								(qui indique que la recherche fait partie des favoris) -->
-            <!-- <img src="images/etoile-pleine.svg" alt="Etoile pleine" width="22" > -->
-
-            <!-- (Les 2 icones d'étoile provenant de flaticon.com) -->
-          </button>
-        </div>
-
-        <!-- Résultats de recherche -->
-        <div id="bloc-gif-attente">
-          <img
-            src="images/attente-ajax.gif"
-            alt="GIF Attente de résultats"
-            width="50"
-          />
-        </div>
-        <div id="bloc-resultats">
-          
-        </div>
-      </section>
-
-      <!-- Section de séparation (avec la bordure verte) -->
-      <section id="section-separation"></section>
-
-      <!-- Section des recherches favorites -->
-      <section id="section-favoris">
-        <h2>Recherches favorites</h2>
-        <p>
-          Cliquer sur une recherche favorite ci-dessus pour relancer celle-ci :
-        </p>
-        <ul id="liste-favoris">
-          <li>
-            <span title="Cliquer pour relancer la recherche">Grenoble</span>
-            <img
-              src="images/croix.svg"
-              alt="Icone pour supprimer le favori"
-              width="15"
-              title="Cliquer pour supprimer le favori"
-            />
-          </li>
-          <li>
-            <span title="Cliquer pour relancer la recherche">Lyon</span>
-            <img
-              src="images/croix.svg"
-              alt="Icone pour supprimer le favori"
-              width="15"
-              title="Cliquer pour supprimer le favori"
-            />
-          </li>
-          <li>
-            <span title="Cliquer pour relancer la recherhe.">Web</span>
-            <img
-              src="images/croix.svg"
-              alt="Icone pour supprimer le favori"
-              width="15"
-              title="Cliquer pour supprimer le favori"
-            />
-          </li>
+      <div class="container">
+        <section id="first">
+          <section id="imagination_joke">
+            <h1>
+              Laissez votre <span id="orange">imagination</span> vous guider
+            </h1>
+            <p>
+              Utilisez notre fonction de recherche unique pour trouver des
+              blagues sur Chuck Norris en utilisant des mots-clés ou des
+              catégories.
+            </p>
+            <button id="btn-recherche-header">Commencer à cherche</button>
+            <ul class="categorie">
+              <li class="joke-categorie">
+                <a href="#">Blagues sur Chuck Norris classées par catégories</a>
+              </li>
+              <li class="joke-populaire">
+                <a href="#">Blagues sur Chuck Norris les plus populaires</a>
+              </li>
+              <li class="joke-recente">
+                <a href="#">Blagues sur Chuck Norris les plus récentes</a>
+              </li>
+            </ul>
+          </section>
+          <img src="images/image.png" alt="une image" />
+        </section>
+      </div>
+      <div class="container">
+        <section id="second">
+          <img src="images/attente-ajax.gif" alt="une image" />
+          <section id="imagination_joke">
+            <h1>
+              Explorer les meilleurs blagues par
+              <span id="orange">catégorie</span>
+            </h1>
+            <p>
+              Sélectionnez une catégorie pour commencer à visualiser les
+              meilleurs blagues !
+            </p>
+            <button id="btn-categorie">Catégories</button>
+          </section>
+        </section>
+      </div>
+      <hr />
+      <footer>
+        <p>© 2023 Relume. Tous droits réservés.</p>
+        <ul class="list-footer">
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">Conditions d'utilisation</a></li>
+          <li><a href="#">Paramètres des cookies</a></li>
         </ul>
-        <p class="info-vide">(Aucune recherche favorite)</p>
-      </section>
+      </footer>
     </main>
     <script type="module" src="js/main.js"></script>
   </body>
