@@ -21,6 +21,7 @@ nav {
 nav .logo {
   position: absolute;
   left : 5%;
+  height: 75%;
 }
 
 /* Style des liens dans la barre de navigation */
