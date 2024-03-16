@@ -1,9 +1,26 @@
+html {
+  margin-top: 75px;
+}
+
 /* Styles de base pour la barre de navigation */
 nav {
-  padding: 10px;
+  height: 75px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center; /* Pour centrer verticalement */
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.441);
+  backdrop-filter: blur(10px);
+  z-index: 500;
+  border-bottom: 2px solid black;
+}
+
+nav .logo {
+  position: absolute;
+  left : 5%;
 }
 
 /* Style des liens dans la barre de navigation */
@@ -12,7 +29,6 @@ nav a {
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
-  margin-right: 15%;
 }
 
 /* Styles des éléments de liste dans la barre de navigation */
@@ -21,17 +37,36 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex; /* Pour aligner les éléments horizontalement */
+  gap: 50px;
 }
 
 nav li {
-  margin-right: 20px;
+  color: black;
+  padding: 10px;
+  transition: all .3s ease;
 }
 
-/* Styles spécifiques pour certains liens dans la barre de navigation */
-nav li.Categorie a {
-  color: #ffd700;
+nav li a {
+  transition: all .3s ease;
+  overflow: hidden;
+  position: relative;
 }
 
-nav li.Recherche a {
-  color: #00ff00;
+nav li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #c84747;
+  display: block;
+  position: absolute;
+  transition: all .3s ease;
 }
+
+nav li:hover a {
+  color: #c84747;
+}
+
+nav li:hover a::after {
+  width: 100%;
+}
+
