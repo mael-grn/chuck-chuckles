@@ -1,20 +1,21 @@
-/* Réinitialisation des éléments */
+/* Styles par défaut */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Styles généraux du corps de la page */
+/* Applique un défilement fluide à tous les liens ancrés */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   font: 14pt Inter, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
   color: var(--text-color);
 }
 
-/* Styles pour la section "section-recherche" */
 h1 {
   font-size: 2.7em;
 }
@@ -78,24 +79,28 @@ h1 {
   background-color: var(--active-green);
 }
 
-/* Styles pour le GIF de chargement */
 #bloc-gif-attente {
   display: none;
   margin: 40px;
   text-align: center;
 }
 
-#bloc-resultats p.res::before {
-  content: "\21E8\00A0"; /* Affichage d'une flèche devant chaque résultat */
+#bloc-resultats {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
 }
 
-/* Styles pour la section de séparation */
+#bloc-resultats p.res::before {
+  content: "\21E8\00A0";
+}
+
 #section-separation {
   border-left: 2px dashed var(--main-green);
   margin: 0 20px;
 }
 
-/* Styles pour la section des recherches favorites */
 #section-favoris {
   flex: 0 0 300px;
   margin-top: 0;
@@ -123,27 +128,21 @@ h1 {
   color: var(--main-green);
 }
 
-/* Media-query pour gérer l'affichage sur petit écran */
+/* Media-query pour les petits écrans */
 @media (max-width: 900px) {
-  #conteneur {
-    flex-direction: column-reverse;
-  }
-
-  #section-separation {
-    border-top: 2px dashed var(--main-green);
-    margin: 0 -10px 40px -10px;
-  }
-
-  #section-favoris {
-    flex: 0;
+  #bloc-recherche {
+    flex-direction: column;
+    min-width: auto;
   }
 }
 
+/* Styles pour la recherche */
 .search {
   display: flex;
   align-items: center;
   justify-content: space-between;
   text-align: center;
+  margin: 20px;
 }
 
 .search__input {
@@ -192,4 +191,68 @@ h1 {
   height: 1.3em;
   width: 1.3em;
   fill: #b4b4b4;
+}
+
+/* Styles pour les cartes */
+.card {
+  width: 100%; /* Adapter la largeur à 100% pour les petits écrans */
+  max-width: 600px;
+  min-width: 360px;
+  height: fit-content;
+  background: #f3b95f;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease-in-out;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 70px;
+  height: auto;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.card:hover > .img {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(#9198e5, #712020);
+}
+
+.textBox {
+  flex: 1;
+  margin-left: 10px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.span {
+  font-size: 10px;
+  color: black;
+}
+
+.h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.p {
+  font-size: 12px;
+  font-weight: lighter;
+  color: black;
 }

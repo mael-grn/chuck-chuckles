@@ -1,5 +1,5 @@
 /* Importation de la police Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /* Définition des principales couleurs */
 :root {
   --text-color: #000000; /* (Texte presque blanc) */
@@ -10,6 +10,11 @@
   --almost-black: #2d2d2d;
   --orange-span: #f3b95f;
   --rouge-span: #d04848;
+}
+
+/* Applique un défilement fluide à tous les liens ancrés */
+html {
+  scroll-behavior: smooth;
 }
 
 /* Réinitialisation des éléments */
@@ -152,23 +157,23 @@ p.info-vide {
   padding: 20px;
 }
 
-#imagination_joke {
+.imagination_joke {
   flex-grow: 1;
 }
 
-#imagination_joke h1 {
+.imagination_joke h1 {
   color: var(--text-color);
   text-align: start;
   margin-bottom: 20px;
   font-size: 2.2rem;
 }
 
-#imagination_joke p {
+.imagination_joke p {
   color: #666;
   text-align: start;
 }
 
-#description {
+.description {
   margin-bottom: 20px;
 }
 

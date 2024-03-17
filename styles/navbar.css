@@ -1,14 +1,14 @@
+/* Styles par défaut */
 html {
   margin-top: 75px;
 }
 
-/* Styles de base pour la barre de navigation */
 nav {
   height: 75px;
   display: flex;
   justify-content: center;
-  align-items: center; /* Pour centrer verticalement */
-  position:fixed;
+  align-items: center;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -18,13 +18,11 @@ nav {
   border-bottom: 2px solid black;
 }
 
-nav .logo {
-  position: absolute;
-  left : 5%;
-  height: 75%;
+nav img {
+  height: 50px; /* Ajustez la hauteur du logo selon vos besoins */
+  margin-left: 20px; /* Ajoutez une marge à gauche pour séparer le logo des liens */
 }
 
-/* Style des liens dans la barre de navigation */
 nav a {
   color: var(--text-color);
   text-decoration: none;
@@ -32,23 +30,22 @@ nav a {
   font-weight: bold;
 }
 
-/* Styles des éléments de liste dans la barre de navigation */
 nav ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: flex; /* Pour aligner les éléments horizontalement */
-  gap: 50px;
+  display: flex;
+  gap: 20px;
 }
 
 nav li {
   color: black;
   padding: 10px;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 nav li a {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   overflow: hidden;
   position: relative;
 }
@@ -60,7 +57,7 @@ nav li a::after {
   background-color: #c84747;
   display: block;
   position: absolute;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 nav li:hover a {
@@ -71,3 +68,24 @@ nav li:hover a::after {
   width: 100%;
 }
 
+/* Media-query pour les petits écrans */
+@media (max-width: 900px) {
+  nav {
+    height: auto;
+    justify-content: flex-start;
+    padding: 10px 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav li {
+    padding: 5px 0;
+  }
+
+  nav .logo {
+    display: none; /* Masquer le logo sur les petits écrans */
+  }
+}
