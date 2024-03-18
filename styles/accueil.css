@@ -1,0 +1,161 @@
+
+/*---------------------------------------------------------------------------------------------------------Boutons*/
+
+.button-animated {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.button-animated {
+  /* Vos styles existants */
+  --primary-color: #111;
+  --hovered-color: #c84747;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+  /* Nouvelles propriétés pour centrer */
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.button-animated p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.button-animated::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.button-animated p::before {
+  position: absolute;
+  /*   box-sizing: border-box; */
+  content: "Recherche";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.button-animated:hover::after {
+  width: 100%;
+}
+
+.button-animated:hover p::before {
+  width: 100%;
+}
+
+.button-animated:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+
+.button-animated svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------Page index*/
+.main-title {
+  text-align: center;
+  font-size: 2.7em;
+  color: var(--text-color);
+  width: 50%;
+  margin: 100px auto 50px auto;
+}
+
+#orange {
+  color: var(--orange-span);
+}
+
+#Chuck-Norris-header {
+  color: var(--rouge-span);
+}
+
+#explication {
+  width: 85%;
+  margin: 0 auto 20px; /* Cette règle centre l'élément horizontalement */
+  text-align: center; /* Pour centrer le texte à l'intérieur de l'élément */
+}
+
+.container {
+  width: 70%;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+.container img {
+  max-width: 50%;
+  height: auto;
+  margin: 50px;
+}
+
+/* Styles spécifiques */
+#first,
+#second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.imagination_joke {
+  flex-grow: 1;
+}
+
+.imagination_joke h1 {
+  color: var(--text-color);
+  text-align: start;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+.imagination_joke p {
+  color: #666;
+  text-align: start;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.categorie {
+  list-style: none;
+  padding: 0;
+}
+
+.categorie li {
+  margin-bottom: 10px;
+}
+
+.categorie li :hover {
+  text-decoration: underline;
+}
+
+.categorie li a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+

@@ -21,6 +21,7 @@ nav {
 nav img {
   height: 50px; /* Ajustez la hauteur du logo selon vos besoins */
   margin-left: 20px; /* Ajoutez une marge à gauche pour séparer le logo des liens */
+  object-fit: contain;
 }
 
 nav a {
