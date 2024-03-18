@@ -25,6 +25,8 @@
       </ul>
     </nav>
     <hr />
+
+    <main>
     <!-- Section de recherche (avec résultats) -->
     <section id="section-recherche">
       <div id="entête">
@@ -58,7 +60,6 @@
         <button
           id="btn-favoris"
           type="button"
-          disabled
           title="Ajouter la recherche aux favoris"
         >
           <!-- Icone étoile vide
@@ -86,11 +87,11 @@
           width="50"
         />
       </div>
-      <div id="bloc-resultats"></div>
+      <div id="bloc-resultats">
+        <p>Commencez à rechercher pour afficher des resultats</p>
+      </div>
     </section>
 
-    <!-- Section de séparation (avec la bordure verte) -->
-    <section id="section-separation"></section>
 
     <!-- Section des recherches favorites -->
     <section id="section-favoris">
@@ -127,7 +128,9 @@
       </ul>
       <p class="info-vide">(Aucune recherche favorite)</p>
     </section>
-    <hr />
+    
+  </main>
+  <hr />
     <footer>
       <p>© 2023 Relume. Tous droits réservés.</p>
       <ul class="list-footer">

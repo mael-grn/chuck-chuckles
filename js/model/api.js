@@ -90,9 +90,11 @@ class Api {
                         resolve([new Joke(-1, "Aucune blague n'a été trouvée")]);
                     } else {
                         let jokeList = [];
+                        let counter = 1;
                         data.result.forEach(element => {
-                            let joke = new Joke(element.id, element.value, element.created_at);
+                            let joke = new Joke(element.id, element.value, element.created_at, "Joke "+counter);
                             jokeList.push(joke);
+                            counter++;
                         });
                         resolve(jokeList);
                     }

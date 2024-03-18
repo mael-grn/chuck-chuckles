@@ -13,13 +13,6 @@ export function generateJokeElement(joke) {
   let divElement = document.createElement("div");
   divElement.setAttribute("class", "card");
 
-  // Création de la balise img
-  let imgElement = document.createElement("img");
-  imgElement.setAttribute("src", "./favicon-cn.ico");
-  imgElement.setAttribute("alt", "Logo");
-
-  // Ajout de la balise img à la div principale
-  divElement.appendChild(imgElement);
 
   // Création de la div textBox
   let textBoxDivElement = document.createElement("div");
@@ -34,7 +27,7 @@ export function generateJokeElement(joke) {
   // Création du titre avec un numéro incrémentiel
   let titleParagraphElement = document.createElement("p");
   titleParagraphElement.setAttribute("class", "h1");
-  titleParagraphElement.innerText = "Joke " + ++numBlagues; // Le numéro s'incrémente à chaque nouvelle blague
+  titleParagraphElement.innerText = joke.getTitle(); // Le numéro s'incrémente à chaque nouvelle blague
   textContentDivElement.appendChild(titleParagraphElement);
 
   // Création du span pour la date
