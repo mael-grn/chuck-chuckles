@@ -9,8 +9,6 @@ class Api {
     //url pour faire les requêtes
     #urlReq;
 
-    //url pour les requetes de traductions
-    #urlTranslate;
 
     //valeur de la recherche
     #query;
@@ -23,7 +21,6 @@ class Api {
      */
     constructor(query = "") {
         this.#urlReq = "https://api.chucknorris.io/jokes/search?query="
-        this.#urlTranslate = "https://api-free.deepl.com/v2/translate"
         this.#latestQuery = [];
         this.updateQuery(query);
     }
@@ -77,49 +74,6 @@ class Api {
     }
 
     /**
-     * Envoi un requete à l'API gratuite de DeepL, pour traduire la blague
-     */
-    async #fetchTranslate(text) {
-        try {
-            //Cette clé sera rapidement innactive et donc inutilisable
-            const apiKey = 'cc2ec096-a10d-4773-9a1a-a011630a762b:fx';
-            const targetLang = 'FR';
-            
-
-            const formData = new URLSearchParams({
-                'text': text,
-                'target_lang': targetLang
-            });
-
-
-    
-            const response = await fetch(this.#urlTranslate, {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'DeepL-Auth-Key ' + apiKey,
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: formData
-            });
-
-            console.log(response);
-    
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-    
-            const data = await response.json();
-            console.log(response);
-
-            return data;
-        } catch (error) {
-
-            throw error;
-        }
-    }
-
-    /**
      * permet de rechercher des blagues via un appel à l'api
      * retourne un objet joke
      * @param {*} query la recherche saisie par l'utilisateur
@@ -153,23 +107,6 @@ class Api {
         });
     }
 
-    /**
-     * Permet de traduire le texte d'une blague
-     */
-    translate(text) {
-        //on retourne une promesse directement
-        return new Promise((resolve, reject) => {
-            this.#fetchTranslate(text)
-                .then(data => {
-                    resolve(data);
-                    
-                })
-                .catch(error => {
-                    //en cas d'erreur, un renvoi une blague factice contenant le message d'erreur
-                    resolve("Une erreur s'est produite");
-                });
-        });
-    }
 
 
 

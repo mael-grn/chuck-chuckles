@@ -38,10 +38,6 @@ if (view.btnRecherche) {
       displayResult(jokes);
     });
 
-    api.translate("Hello my friend").then((trans) => {
-      console.log(trans);
-    });
-
   });
 }
 
