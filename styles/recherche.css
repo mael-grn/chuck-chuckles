@@ -168,6 +168,15 @@ main > section {
   fill: #b4b4b4;
 }
 
+.favoris-item {
+  display: flex;
+  align-items: center; /* Aligner les éléments verticalement */
+}
+
+.favoris-item img {
+  margin-left: 5px; /* Ajouter un espace entre le texte et l'image */
+}
+
 /* Styles pour les cartes */
 .card {
   width: 100%; /* Adapter la largeur à 100% pour les petits écrans */
