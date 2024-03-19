@@ -37,3 +37,48 @@ view.btnRecherche.addEventListener("click", () => {
     displayResult(jokes);
   });
 });
+
+view.btnFavoris.addEventListener("click", () => {
+  const imgSrc = view.etoileImg.getAttribute("src");
+  if (imgSrc === "images/star-vide.png") {
+    view.etoileImg.setAttribute("src", "images/star-pleine.png");
+    view.btnFavoris.setAttribute("title", "Retirer la recherche des favoris");
+
+    // Sélectionnez l'élément input par son ID
+    var inputTextResponse = document.getElementById("input-text-response");
+
+    // Récupérez la valeur de l'input
+    var texteInput = inputTextResponse.value;
+
+    // Créez un nouvel élément <li>
+    var nouvelElement = document.createElement("li");
+
+    // Ajoutez le texte de l'input au nouvel élément <li>
+    nouvelElement.textContent = texteInput;
+
+    // Créez un élément <img> pour l'icone de suppression
+    var imgSuppression = document.createElement("img");
+    imgSuppression.src = "images/croix.svg";
+    imgSuppression.alt = "Icone pour supprimer le favori";
+    imgSuppression.width = "15";
+    imgSuppression.title = "Cliquer pour supprimer le favori";
+
+    // Ajoutez l'élément <img> à l'élément <li>
+    nouvelElement.appendChild(imgSuppression);
+
+    // Sélectionnez l'élément <ul> par son ID
+    var listeFavoris = document.getElementById("liste-favoris");
+
+    // Ajoutez le nouvel élément à la liste des favoris
+    listeFavoris.appendChild(nouvelElement);
+  } else {
+    view.etoileImg.setAttribute("src", "images/star-vide.png");
+    view.btnFavoris.setAttribute("title", "Ajouter la recherche aux favoris");
+    // Sélectionnez l'élément <ul> par son ID
+    var listeFavoris = document.getElementById("liste-favoris");
+
+    // Sélectionnez le premier élément <li>
+    var nouvelElement = listeFavoris.firstElementChild;
+    listeFavoris.removeChild(nouvelElement);
+  }
+});

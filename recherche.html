@@ -68,7 +68,6 @@
             src="images/star-vide.png"
             alt="Etoile vide"
             width="30"
-            onclick="toggleStar(this)"
           />
 
           <!-- Icone étoile pleine
@@ -99,7 +98,7 @@
       <h2>Recherches favorites</h2>
       <p>Cliquer sur une recherche favorite ci-dessus pour la relancer :</p>
       <ul id="liste-favoris">
-        <li>
+        <!--<li>
           <span title="Cliquer pour relancer la recherche">Grenoble</span>
           <img
             src="images/croix.svg"
@@ -126,8 +125,8 @@
             title="Cliquer pour supprimer le favori"
           />
         </li>
-      </ul>
-      <p class="info-vide">(Aucune recherche favorite)</p>
+      </ul>-->
+      <!--<p class="info-vide">(Aucune recherche favorite)</p>-->
     </section>
     
   </main>
@@ -142,13 +141,4 @@
     </footer>
   </body>
   <script type="module" src="js/main.js"></script>
-  <script>
-    function toggleStar(img) {
-      if (img.src.includes("star-vide")) {
-        img.src = "images/start-pleine.png";
-      } else {
-        img.src = "images/star-vide.png";
-      }
-    }
-  </script>
 </html>
