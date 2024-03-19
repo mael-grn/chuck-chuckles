@@ -9,6 +9,7 @@ const view = {
   loadingImage: document.querySelector(".loading"),
   btnFavoris: document.getElementById("btn-favoris"),
   etoileImg: document.querySelector("#btn-favoris img"),
+  appearsOnScroll: document.querySelectorAll(".appearsOnScroll"),
 };
 
 export default view;
