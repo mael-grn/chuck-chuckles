@@ -37,6 +37,11 @@ if (view.btnRecherche) {
       view.loadingImage.classList.remove("loading-visible");
       displayResult(jokes);
     });
+
+    api.translate("Hello my friend").then((trans) => {
+      console.log(trans);
+    });
+
   });
 }
 
