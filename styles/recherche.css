@@ -1,5 +1,3 @@
-
-
 /*---------------------------------------------------------------------------------------------------------*/
 main {
   padding: 0 5%;
@@ -36,7 +34,6 @@ main > section {
   width: 50%;
 }
 
-
 #bloc-recherche {
   display: flex;
   margin: 75px auto;
@@ -47,16 +44,7 @@ main > section {
   gap: 20px;
 }
 
-
-#bloc-recherche > input[type="text"] {
-  color: var(--almost-black);
-  flex: 1;
-  padding: 0.7em;
-  border: 0.3em solid var(--main-green);
-}
-
-
-#btn-favoris  {
+#btn-favoris {
   background-color: #f3b95f;
   border: 1px solid black;
   border-radius: 35px;
@@ -92,8 +80,6 @@ main > section {
   border-left: 2px dashed var(--main-green);
   margin: 0 20px;
 }
-
-
 
 #section-favoris h2 {
   margin-top: 0;
@@ -189,7 +175,7 @@ main > section {
   min-width: 360px;
   height: fit-content;
   background: #f3b95f;
-  border: .5px solid black;
+  border: 0.5px solid black;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -198,7 +184,7 @@ main > section {
   transition: 0.3s ease-in-out;
   padding: 20px;
   margin-bottom: 10px;
-  animation:  grow ease .3s;
+  animation: grow ease 0.3s;
 }
 
 .card:hover {
@@ -247,8 +233,6 @@ main > section {
   font-size: 15px;
   color: black;
 }
-
-
 
 #bloc-resultats .loading {
   margin-top: 50px;
