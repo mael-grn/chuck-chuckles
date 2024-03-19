@@ -20,7 +20,7 @@ class Api {
      * constructeur de l'objet API
      */
     constructor(query = "") {
-        this.#urlReq = "https://api.chucknorris.io/jokes/search?query="
+        this.#urlReq = "https://api.chucknorris.io/jokes"
         this.#latestQuery = [];
         this.updateQuery(query);
     }
@@ -58,7 +58,30 @@ class Api {
         try {
 
             //on récupère les données
-            const url = this.#urlReq + encodeURIComponent(this.#query);
+            const url = this.#urlReq + "/search?query=" + encodeURIComponent(this.#query);
+
+            const response = await fetch(url);
+
+            //on traite le cas d'erreur
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    /**
+     * envoi une requete à l'API pour recuperer les catégories
+     * @returns les données des catégories sont au format JSON
+     */
+    async #fetchCategory() {
+        try {
+
+            //on récupère les données
+            const url = this.#urlReq + "/categories";
 
             const response = await fetch(url);
 
@@ -107,6 +130,32 @@ class Api {
         });
     }
 
+    /**
+     * permets de recuperer les catégories
+     * @returns un tableau de strings
+     */
+    getCategories() {
+        //on retourne une promesse directement
+        return new Promise((resolve, reject) => {
+            this.#fetchCategory()
+                .then(data => {
+                    if (data.total == 0) {
+                        resolve(["Aucune catégorie trouvée"]);
+                    } else {
+                        let catList = [];
+                        data.forEach(element => {
+                            catList.push(element);
+                        });
+                        resolve(catList);
+                    }
+                })
+                .catch(error => {
+
+                    //en cas d'erreur, un renvoi une blague factice contenant le message d'erreur
+                    resolve(["Une erreur s'est produite"]);
+                });
+        });
+    }
 
 
 

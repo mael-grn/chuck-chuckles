@@ -1,6 +1,6 @@
 import Api from "./model/api.js";
 import view from "./view.js";
-import { generateJokeElement } from "./creator.js";
+import { generateJokeElement, generateCategeorieElement } from "./creator.js";
 
 const api = new Api();
 
@@ -138,24 +138,40 @@ function updateFavouriteList() {
   })
 }
 //on appelle la fonction au chargement de la page, pour que les favoris soient récupérés dans le localstorage et affichés dès le chargement
-updateFavouriteList();
+if (view.blocResultat) {
+  updateFavouriteList();
+}
 
 /**
  * listener d'appuis d'une touche dans le champs de recherche, pour mettre à jour dynamiquement l'etoile des favoris
  */
 
-view.inputRecherche.addEventListener("keyup", () => {
+if (view.inputRecherche) {
+  view.inputRecherche.addEventListener("keyup", () => {
 
-  let favoris = JSON.parse(localStorage.getItem("favoris")) || [];
+    let favoris = JSON.parse(localStorage.getItem("favoris")) || [];
+  
+    if (!favoris.includes(view.inputRecherche.value)) {
+      view.etoileImg.setAttribute("src", "images/star-vide.png");
+      view.btnFavoris.setAttribute("title", "Ajouter la recherche aux favoris");
+    } else {
+      view.etoileImg.setAttribute("src", "images/star-pleine.png");
+      view.btnFavoris.setAttribute("title", "Retirer la recherche des favoris");
+    }
+  })
+}
 
-  if (!favoris.includes(view.inputRecherche.value)) {
-    view.etoileImg.setAttribute("src", "images/star-vide.png");
-    view.btnFavoris.setAttribute("title", "Ajouter la recherche aux favoris");
-  } else {
-    view.etoileImg.setAttribute("src", "images/star-pleine.png");
-    view.btnFavoris.setAttribute("title", "Retirer la recherche des favoris");
-  }
-})
+/**
+ * permets l'affichage des catégories, seulement si la page actuelle est la page des catégories
+ */
+if (view.blocCategories) {
+  api.getCategories().then((data) => {
+    data.forEach((category) => {
+      view.blocCategories.appendChild(generateCategeorieElement(category));
+    })
+  })
+}
+
 
 
 

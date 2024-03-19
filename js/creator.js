@@ -44,3 +44,15 @@ export function generateJokeElement(joke) {
 
   return divElement;
 }
+
+export function generateCategeorieElement(nomCat) {
+  let divElement = document.createElement("div");
+  divElement.setAttribute("class", "categorie");
+
+  // Création du titre avec un numéro incrémentiel
+  let titleCat = document.createElement("p");
+  titleCat.innerText = nomCat; // Le numéro s'incrémente à chaque nouvelle blague
+  divElement.appendChild(titleCat);
+
+  return divElement;
+}
