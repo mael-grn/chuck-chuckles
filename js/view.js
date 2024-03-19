@@ -10,6 +10,7 @@ const view = {
   btnFavoris: document.getElementById("btn-favoris"),
   etoileImg: document.querySelector("#btn-favoris img"),
   appearsOnScroll: document.querySelectorAll(".appearsOnScroll"),
+  listeFavoris : document.getElementById("liste-favoris"),
 };
 
 export default view;
