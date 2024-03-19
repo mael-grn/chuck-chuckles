@@ -1,125 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <title>Chuck Chuckles</title>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon-cn.ico" />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/navbar.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-  </head>
 
-  <body>
-    <nav>
-      <img href="#" class="logo" src="./favicon-cn.ico"></img>
-      <ul>
-        <li class="Accueil">
-          <a href="#">Accueil</a>
-        </li>
-        <li class="Categorie">
-          <a href="categorie">Catégorie</a>
-        </li>
-        <li class="Recherche">
-          <a href="recherche.html">Recherche</a>
-        </li>
-      </ul>
-    </nav>
-      
-    <main id="conteneur">
-      <h1 class="main-title">
-        Découvrez l'univers <span id="orange">légendaire</span> de
-        <span id="Chuck-Norris-header">Chuck Norris</span>
-      </h1>
-      <p id="explication">
-        Plongez dans les blagues hilarantes mettant en scène Chuck Norris et
-        préparez-vous à rire aux éclats.
-      </p>
-      <a href="recherche.html"
-        ><button>
-          <p>Recherche</p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="4"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            ></path>
-          </svg></button
-      ></a>
-      <div class="container">
-        <section id="first">
-          <section id="imagination_joke">
-            <h1>
-              Laissez votre <span id="orange">imagination</span> vous guider
-            </h1>
-            <p id="description">
-              Utilisez notre fonction de recherche unique pour trouver des
-              blagues sur Chuck Norris en utilisant des mots-clés ou des
-              catégories.
-            </p>
-            <ul class="categorie">
-              <li class="joke-categorie">
-                <a href="#">Blagues sur Chuck Norris classées par catégories</a>
-              </li>
-              <li class="joke-populaire">
-                <a href="#">Blagues sur Chuck Norris les plus populaires</a>
-              </li>
-              <li class="joke-recente">
-                <a href="#">Blagues sur Chuck Norris les plus récentes</a>
-              </li>
-            </ul>
-          </section>
-          <img src="images/home-1.png" alt="une image" />
+<head>
+  <title>Chuck Chuckles</title>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon-cn.ico" />
+  <link rel="stylesheet" href="styles/accueil.css" />
+  <link rel="stylesheet" href="styles/navbar.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li class="Accueil">
+        <a href="#">Accueil</a>
+      </li>
+      <li class="Categorie">
+        <a href="categorie">Catégorie</a>
+      </li>
+      <li class="Recherche">
+        <a href="recherche.html">Recherche</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="conteneur">
+    <h1 class="main-title">
+      Découvrez l'univers <span id="orange">légendaire</span> de
+      <span id="Chuck-Norris-header">Chuck Norris</span>
+    </h1>
+    <p id="explication">
+      Plongez dans les blagues hilarantes mettant en scène Chuck Norris et
+      préparez-vous à rire aux éclats.
+    </p>
+    
+      <button class="button-animated">
+        <p>Recherche</p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          stroke-width="4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </button>
+    
+    <div class="container">
+      <section id="first">
+        <section class="imagination_joke">
+          <h1>
+            Laissez votre <span id="orange">imagination</span> vous guider
+          </h1>
+          <p class="description">
+            Utilisez notre fonction de recherche unique pour trouver des
+            blagues sur Chuck Norris en utilisant des mots-clés ou des
+            catégories.
+          </p>
+          <ul class="categorie">
+            <li class="joke-categorie">
+              <a href="#">Blagues sur Chuck Norris classées par catégories</a>
+            </li>
+            <li class="joke-populaire">
+              <a href="#">Blagues sur Chuck Norris les plus populaires</a>
+            </li>
+            <li class="joke-recente">
+              <a href="#">Blagues sur Chuck Norris les plus récentes</a>
+            </li>
+          </ul>
         </section>
-      </div>
-      <div class="container">
-        <section id="second">
-          <img src="images/home-2.png" alt="une image" />
-          <section id="imagination_joke">
-            <h1>
-              Explorer les meilleurs blagues par
-              <span id="orange">catégorie</span>
-            </h1>
-            <p id="description">
-              Sélectionnez une catégorie pour commencer à visualiser les
-              meilleurs blagues !
-            </p>
-            <button>
-              <p>Recherche</p>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="4"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
-            </button>
-          </section>
+        <img src="images/home-1.png" alt="une image" />
+      </section>
+    </div>
+    <div class="container">
+      <section id="second">
+        <img src="images/home-2.png" alt="une image" />
+        <section class="imagination_joke">
+          <h1>
+            Explorer les meilleurs blagues par
+            <span id="orange">catégorie</span>
+          </h1>
+          <p class="description">
+            Sélectionnez une catégorie pour commencer à visualiser les
+            meilleurs blagues !
+          </p>
+          <button class="button-animated">
+            <p>Recherche</p>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              stroke-width="4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
         </section>
-      </div>
-      <hr />
-    </main>
-    <footer>
-      <p>© 2023 Relume. Tous droits réservés.</p>
-      <ul class="list-footer">
-        <li><a href="#">Politique de confidentialité</a></li>
-        <li><a href="#">Conditions d'utilisation</a></li>
-        <li><a href="#">Paramètres des cookies</a></li>
-      </ul>
-    </footer>
-    <script type="module" src="js/main.js"></script>
-  </body>
+      </section>
+    </div>
+    <hr />
+  </main>
+  <footer>
+    <p>© 2023 Lorengar Innovations Ltd. Tous droits réservés.</p>
+    <ul class="list-footer">
+      <li><a href="#">Politique de confidentialité</a></li>
+      <li><a href="#">Conditions d'utilisation</a></li>
+      <li><a href="#">Paramètres des cookies</a></li>
+    </ul>
+  </footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+
 </html>

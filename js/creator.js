@@ -1,28 +1,46 @@
 import Joke from "./model/joke.js";
-/**
- * ce fichier permets de generer plusieurs type d'elements html, en vu de les integrer dans la page web si necessaire
- */
 
 /**
- * permets de creer la tuile d'affichage d'une blague
- * @param {*} joke
+ * Cette fonction génère un élément HTML représentant une blague.
+ * @param {*} joke - L'objet blague à afficher.
+ * @returns {HTMLElement} - L'élément HTML représentant la blague.
  */
+
+let numBlagues = 0; // Initialisation du nombre de blagues
+
 export function generateJokeElement(joke) {
-  //div parent de l'element
-  let divElement = document.createElement("section");
-  divElement.setAttribute("class", "res joke " + joke.getId());
+  // Création de l'élément div parent
+  let divElement = document.createElement("div");
+  divElement.setAttribute("class", "card");
 
-  //contenu de la div
-  let pElement = document.createElement("p");
-  pElement.innerText = joke.getContent();
-  pElement.setAttribute("class", "joke-content");
-  divElement.appendChild(pElement);
 
-  //date de la div
-  let dateElement = document.createElement("p");
-  dateElement.innerText = joke.getDateCreation();
-  dateElement.setAttribute("class", "joke-date");
-  divElement.appendChild(dateElement);
+  // Création de la div textBox
+  let textBoxDivElement = document.createElement("div");
+  textBoxDivElement.setAttribute("class", "textBox");
+  divElement.appendChild(textBoxDivElement);
+
+  // Création de la div textContent
+  let textContentDivElement = document.createElement("div");
+  textContentDivElement.setAttribute("class", "textContent");
+  textBoxDivElement.appendChild(textContentDivElement);
+
+  // Création du titre avec un numéro incrémentiel
+  let titleParagraphElement = document.createElement("p");
+  titleParagraphElement.setAttribute("class", "h1");
+  titleParagraphElement.innerText = joke.getTitle(); // Le numéro s'incrémente à chaque nouvelle blague
+  textContentDivElement.appendChild(titleParagraphElement);
+
+  // Création du span pour la date
+  let dateSpanElement = document.createElement("span");
+  dateSpanElement.setAttribute("class", "span");
+  dateSpanElement.innerText = "Remplacer par les icones"; // Vous pouvez remplacer "Just Now" par la date de création de la blague si nécessaire
+  textContentDivElement.appendChild(dateSpanElement);
+
+  // Création du paragraphe pour le contenu de la blague
+  let jokeParagraphElement = document.createElement("p");
+  jokeParagraphElement.setAttribute("class", "p");
+  jokeParagraphElement.innerText = joke.getContent();
+  textBoxDivElement.appendChild(jokeParagraphElement);
 
   return divElement;
 }

@@ -6,24 +6,27 @@
     <link rel="stylesheet" href="styles/footer.css" />
     <link rel="stylesheet" href="styles/navbar.css" />
     <link rel="stylesheet" href="styles/recherche.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+
     <title>Document</title>
   </head>
   <body>
     <nav>
-      <a href="#">LOGO</a>
       <ul>
         <li class="Accueil">
-          <a href="#">Accueil</a>
+          <a href="./index.html">Accueil</a>
         </li>
         <li class="Categorie">
           <a href="categorie">Catégorie</a>
         </li>
         <li class="Recherche">
-          <a href="recherche">Recherche</a>
+          <a href="#">Recherche</a>
         </li>
       </ul>
     </nav>
     <hr />
+
+    <main>
     <!-- Section de recherche (avec résultats) -->
     <section id="section-recherche">
       <div id="entête">
@@ -57,7 +60,6 @@
         <button
           id="btn-favoris"
           type="button"
-          disabled
           title="Ajouter la recherche aux favoris"
         >
           <!-- Icone étoile vide
@@ -86,12 +88,13 @@
         />
       </div>
       <div id="bloc-resultats">
+        <p>Commencez à rechercher pour afficher des resultats</p>
+      </div>
+      <div id="bloc-resultats">
         <img src="./images/loading.gif" alt="chargement" class="loading">
       </div>
     </section>
 
-    <!-- Section de séparation (avec la bordure verte) -->
-    <section id="section-separation"></section>
 
     <!-- Section des recherches favorites -->
     <section id="section-favoris">
@@ -128,7 +131,9 @@
       </ul>
       <p class="info-vide">(Aucune recherche favorite)</p>
     </section>
-    <hr />
+    
+  </main>
+  <hr />
     <footer>
       <p>© 2023 Relume. Tous droits réservés.</p>
       <ul class="list-footer">

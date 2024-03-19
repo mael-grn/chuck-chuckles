@@ -12,13 +12,16 @@ class Joke {
     //la blague elle-meme
     #content;
 
+    #title
+
     /**
      * constructeur de la classe
      */
-    constructor(id, content, dateCreation = "") {
+    constructor(id, content, dateCreation = "", title) {
         this.#id = id;
         this.#dateCreation = dateCreation;
         this.#content = content;
+        this.#title = title;
     }
 
     /**
@@ -27,6 +30,10 @@ class Joke {
      */
     getId() {
         return this.#id;
+    }
+
+    getTitle() {
+        return this.#title;
     }
 
     /**

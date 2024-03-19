@@ -1,53 +1,52 @@
-/* Réinitialisation des éléments */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+
+/*---------------------------------------------------------------------------------------------------------*/
+main {
+  padding: 0 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 
-/* Styles généraux du corps de la page */
-body {
-  background-color: var(--background);
-  font: 14pt Inter, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: var(--text-color);
+main > section {
+  margin-top: 40px;
+  flex: 1 1 auto;
 }
 
-/* Styles pour la section "section-recherche" */
-h1 {
+#section-favoris {
+  position: fixed;
+  top: 100px;
+  right: 50px;
+  width: 20%;
+}
+
+#entête h1 {
   font-size: 2.7em;
 }
 
 #entête {
-  margin: 0 0 20px 20px;
+  margin: 20px 0;
 }
 
 #description {
   color: #666;
   text-align: start;
+  margin-top: 15px;
   width: 50%;
 }
 
-#section-recherche {
-  margin-top: 40px;
-  flex: 1 1 auto;
-}
 
 #bloc-recherche {
   display: flex;
-  margin: 0 auto;
+  margin: 75px auto;
   min-width: 450px;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 20px;
 }
 
-#bloc-recherche > input[type="text"],
-#bloc-recherche > button {
-  display: block;
-  font-size: 1.2em;
-}
 
 #bloc-recherche > input[type="text"] {
   color: var(--almost-black);
@@ -56,29 +55,21 @@ h1 {
   border: 0.3em solid var(--main-green);
 }
 
-#bloc-recherche > button {
-  padding: 0.8em 0.8em;
-  background-color: var(--background-button);
-}
 
-#bloc-recherche > button.btn_clicable {
-  background-color: var(--main-green);
-}
-
-#bloc-recherche > button:focus {
-  outline: 0 !important;
-}
-
-#bloc-recherche > button.btn_clicable:hover {
-  cursor: pointer;
+#btn-favoris  {
+  background-color: #f3b95f;
   border: 1px solid black;
+  border-radius: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+#btn-favoris img {
+  width: 25px;
 }
 
-#bloc-recherche > button.btn_clicable:active {
-  background-color: var(--active-green);
-}
-
-/* Styles pour le GIF de chargement */
 #bloc-gif-attente {
   display: none;
   margin: 40px;
@@ -87,27 +78,23 @@ h1 {
 
 #bloc-resultats {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+  min-height: 60vh;
 }
 
 #bloc-resultats p.res::before {
-  content: "\21E8\00A0"; /* Affichage d'une flèche devant chaque résultat */
+  content: "\21E8\00A0";
 }
 
-/* Styles pour la section de séparation */
 #section-separation {
   border-left: 2px dashed var(--main-green);
   margin: 0 20px;
 }
 
-/* Styles pour la section des recherches favorites */
-#section-favoris {
-  flex: 0 0 300px;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
+
 
 #section-favoris h2 {
   margin-top: 0;
@@ -130,22 +117,15 @@ h1 {
   color: var(--main-green);
 }
 
-/* Media-query pour gérer l'affichage sur petit écran */
+/* Media-query pour les petits écrans */
 @media (max-width: 900px) {
-  #conteneur {
-    flex-direction: column-reverse;
-  }
-
-  #section-separation {
-    border-top: 2px dashed var(--main-green);
-    margin: 0 -10px 40px -10px;
-  }
-
-  #section-favoris {
-    flex: 0;
+  #bloc-recherche {
+    flex-direction: column;
+    min-width: auto;
   }
 }
 
+/* Styles pour la recherche */
 .search {
   display: flex;
   align-items: center;
@@ -164,6 +144,8 @@ h1 {
   width: 25em;
   transition: all ease-in-out 0.5s;
   margin-right: -2rem;
+  border: 1px solid black;
+  height: 50px;
 }
 
 .search__input:hover,
@@ -199,6 +181,71 @@ h1 {
   height: 1.3em;
   width: 1.3em;
   fill: #b4b4b4;
+}
+
+/* Styles pour les cartes */
+.card {
+  width: 100%; /* Adapter la largeur à 100% pour les petits écrans */
+  max-width: 600px;
+  min-width: 360px;
+  height: fit-content;
+  background: #f3b95f;
+  border: .5px solid black;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease-in-out;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 70px;
+  height: auto;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.card:hover > .img {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(#9198e5, #712020);
+}
+
+.textBox {
+  flex: 1;
+  margin-left: 10px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.textContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.span {
+  font-size: 10px;
+  color: black;
+}
+
+.h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: black;
 }
 
 
