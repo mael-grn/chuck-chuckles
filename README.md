@@ -20,7 +20,7 @@ Ce projet fournit une interface web simple et intuitive pour explorer et s'amuse
 
 - **Sauvegarde de blague :** En plus de pouvoir sauvegarder des recherches, l'utilisateur pourra sauvegarder des blagues spécifiques.
 
-- **Tranduction :** Bien que nous sommes francais, les blagues récupérées via l'API sont en anglais. Mais c'etait sans compter sur une seconde API pour les traduires : l'API DeepL.
+- **Tranduction :** Bien que nous sommes francais, les blagues récupérées via l'API sont en anglais. Mais c'etait sans compter sur une seconde API pour les traduires : l'API DeepL. NOTE : la fonctionnalité n'a finalement pas pu etre deployée, car la seule api gratuite (DeepL) bloc le site à cause de la sécurité CORS
 
 - **Design responsive :** Le site est accessible et agréable à consulter sur des appareils de différentes tailles, des smartphones aux écrans larges.
 
