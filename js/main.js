@@ -165,11 +165,21 @@ if (view.inputRecherche) {
  * permets l'affichage des catégories, seulement si la page actuelle est la page des catégories
  */
 if (view.blocCategories) {
+
+  /*
   api.getCategories().then((data) => {
     data.forEach((category) => {
       view.blocCategories.appendChild(generateCategeorieElement(category));
     })
   })
+  */
+  
+  //malgré le fait que l'appel à l'api ci dessus pour les catégories est fonctionnel, à des fin de developpement, il est preferable de tester sur une liste local
+  
+  ["animal","career","celebrity","dev","explicit","fashion","food","history","money","movie","music","political","religion","science","sport","travel"].forEach((category) => {
+    view.blocCategories.appendChild(generateCategeorieElement(category));
+  })
+  
 }
 
 

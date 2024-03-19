@@ -97,6 +97,29 @@ class Api {
     }
 
     /**
+     * envoi une requete à l'API pour recuperer une blague aleatoire à partir d'une catégorie
+     * @returns les données des catégories sont au format JSON
+     */
+    async #fetchDataFromCategorie(categorie) {
+        try {
+
+            //on récupère les données
+            const url = this.#urlReq + "/random?category=" + categorie;
+
+            const response = await fetch(url);
+
+            //on traite le cas d'erreur
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    /**
      * permet de rechercher des blagues via un appel à l'api
      * retourne un objet joke
      * @param {*} query la recherche saisie par l'utilisateur
@@ -136,6 +159,8 @@ class Api {
      */
     getCategories() {
         //on retourne une promesse directement
+
+        
         return new Promise((resolve, reject) => {
             this.#fetchCategory()
                 .then(data => {
@@ -153,6 +178,32 @@ class Api {
 
                     //en cas d'erreur, un renvoi une blague factice contenant le message d'erreur
                     resolve(["Une erreur s'est produite"]);
+                });
+        });
+    }
+
+    /**
+     * permet de rechercher aleatoirement une blagues via un appel à l'api
+     * retourne un objet joke
+     * @param {*} categorie la categorie saisie par l'utilisateur
+     */
+    getRandomFromCat(categorie) {
+
+        //on retourne une promesse directement
+        return new Promise((resolve, reject) => {
+            this.#fetchDataFromCategorie(categorie)
+                .then(data => {
+                    if (data.total == 0) {
+                        resolve([new Joke(-1, "Aucune blague n'a été trouvée")]);
+                    } else {
+                        let joke = new Joke(data.id, data.value, data.created_at, categorie);
+                        
+                        resolve(joke);
+                    }
+                })
+                .catch(error => {
+                    //en cas d'erreur, un renvoi une blague factice contenant le message d'erreur
+                    resolve([new Joke(-1, "Une erreur s'est produite")]);
                 });
         });
     }
