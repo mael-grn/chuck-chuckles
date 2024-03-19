@@ -37,6 +37,7 @@ if (view.btnRecherche) {
       view.loadingImage.classList.remove("loading-visible");
       displayResult(jokes);
     });
+
   });
 }
 

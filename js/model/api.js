@@ -9,6 +9,7 @@ class Api {
     //url pour faire les requêtes
     #urlReq;
 
+
     //valeur de la recherche
     #query;
 
@@ -105,6 +106,9 @@ class Api {
                 });
         });
     }
+
+
+
 
 }
 

@@ -14,10 +14,15 @@ Ce projet fournit une interface web simple et intuitive pour explorer et s'amuse
 
 ## Fonctionnalités
 
-- **Affichage aléatoire de blagues :** Chaque fois que l'utilisateur charge ou rafraîchit la page, une nouvelle blague sur Chuck Norris est affichée.
-- **Bouton pour nouvelle blague :** Un bouton permet aux utilisateurs de charger une nouvelle blague sans avoir à rafraîchir la page.
+- **Recherche de blague :** Le site permettra à l'utilisateur de rechercer des blagues sur chuck norris via l'api chucknorris.io, en retrant une "query string" dans un champs de recherche.
+
+- **Sauvegarde de recherche :** L'utilsateur pourra sauvegarder ses recherches préferées dans le localStrorage grace à un simple bouton.
+
+- **Sauvegarde de blague :** En plus de pouvoir sauvegarder des recherches, l'utilisateur pourra sauvegarder des blagues spécifiques.
+
+- **Tranduction :** Bien que nous sommes francais, les blagues récupérées via l'API sont en anglais. Mais c'etait sans compter sur une seconde API pour les traduires : l'API DeepL. NOTE : la fonctionnalité n'a finalement pas pu etre deployée, car la seule api gratuite (DeepL) bloc le site à cause de la sécurité CORS
+
 - **Design responsive :** Le site est accessible et agréable à consulter sur des appareils de différentes tailles, des smartphones aux écrans larges.
-- **Simplicité et rapidité :** Grâce à l'utilisation de technologies de base, le site est extrêmement rapide et léger.
 
 ## Technologies utilisées
 
