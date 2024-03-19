@@ -29,8 +29,11 @@ view.btnRecherche.addEventListener("click", () => {
   var inputValue = document.getElementById("input-text-response").value;
   console.log("input value : " + inputValue);
 
+  view.loadingImage.classList.add("loading-visible");
+
   //on effectue le recherche et on affiche les resultats
   api.searchJoke(inputValue).then((jokes) => {
+    view.loadingImage.classList.remove("loading-visible");
     displayResult(jokes);
   });
 });

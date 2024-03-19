@@ -85,6 +85,13 @@ h1 {
   text-align: center;
 }
 
+#bloc-resultats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #bloc-resultats p.res::before {
   content: "\21E8\00A0"; /* Affichage d'une flèche devant chaque résultat */
 }
@@ -192,4 +199,16 @@ h1 {
   height: 1.3em;
   width: 1.3em;
   fill: #b4b4b4;
+}
+
+
+
+#bloc-resultats .loading {
+  margin-top: 50px;
+  width: 75px;
+  visibility: hidden;
+}
+
+#bloc-resultats .loading-visible {
+  visibility: visible;
 }
