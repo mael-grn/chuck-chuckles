@@ -34,6 +34,16 @@ body {
   color: var(--text-color);
 }
 
+/* animation des elements quand ils apparaissent à l'ecran */
+.appearsOnScroll {
+  visibility: hidden;
+}
+
+.visible {
+  animation: grow ease .3s;
+  visibility: visible;
+}
+
 /* Ajustement des images */
 
 

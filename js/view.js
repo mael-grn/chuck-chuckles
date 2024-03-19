@@ -7,6 +7,7 @@ const view = {
     inputRecherche: document.getElementById("input-text-response"),
     blocResultat: document.getElementById("bloc-resultats"),
     loadingImage: document.querySelector(".loading"),
+    appearsOnScroll: document.querySelectorAll(".appearsOnScroll"),
   };
 
 export default view;
