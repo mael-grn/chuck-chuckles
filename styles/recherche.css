@@ -79,7 +79,6 @@ main > section {
 #bloc-resultats {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   margin: 20px;
   min-height: 60vh;
@@ -199,6 +198,7 @@ main > section {
   transition: 0.3s ease-in-out;
   padding: 20px;
   margin-bottom: 10px;
+  animation:  grow ease .3s;
 }
 
 .card:hover {

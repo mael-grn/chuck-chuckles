@@ -6,7 +6,7 @@ const view = {
     btnRecherche: document.getElementById("btn-lancer-recherche"),
     inputRecherche: document.getElementById("input-text-response"),
     blocResultat: document.getElementById("bloc-resultats"),
-    loadingImage: document.getElementsByClassName("loading"),
+    loadingImage: document.querySelector(".loading"),
   };
 
 export default view;

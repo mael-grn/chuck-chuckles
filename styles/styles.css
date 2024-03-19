@@ -15,6 +15,7 @@
 /* Applique un défilement fluide à tous les liens ancrés */
 html {
   scroll-behavior: smooth;
+
 }
 
 /* Réinitialisation des éléments */
@@ -44,5 +45,15 @@ body {
     #second {
       flex-direction: column;
       text-align: center;
+    }
+  }
+
+  @keyframes grow {
+    from {
+      transform: scale(0.7);
+      opacity: 0;
+    } to {
+      transform: scale(1);
+      opacity: 1;
     }
   }
