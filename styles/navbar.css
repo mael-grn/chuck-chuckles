@@ -16,6 +16,7 @@ nav {
   backdrop-filter: blur(10px);
   z-index: 500;
   border-bottom: 2px solid black;
+  animation: from-top ease .3s;
 }
 
 nav img {

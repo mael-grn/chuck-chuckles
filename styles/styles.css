@@ -67,3 +67,11 @@ body {
       opacity: 1;
     }
   }
+
+  @keyframes from-top {
+    from {
+      height: 0px;
+    } to {
+      height: 75px;
+    }
+  }
