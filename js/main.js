@@ -33,7 +33,7 @@ searchJoke();
   // Écoute de l'événement "keypress" sur le champ de recherche
   view.inputRecherche.addEventListener("keypress", (event) => {
     // Vérification si la touche pressée est "Entrée" (code 13)
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       searchJoke();
     }
   });
@@ -41,12 +41,14 @@ searchJoke();
   // Fonction pour effectuer la recherche et afficher les résultats
   function searchJoke() {
     let inputValue = view.inputRecherche.value;
-    view.loadingImage.classList.add("loading-visible");
+    view.loadingImage.classList.add("wrapper-visible");
 
     //on effectue le recherche et on affiche les resultats
     api.searchJoke(inputValue).then((jokes) => {
-      view.loadingImage.classList.remove("loading-visible");
-      displayResult(jokes);
+      setTimeout(() => {
+        view.loadingImage.classList.remove("wrapper-visible");
+        displayResult(jokes);
+      }, 1000); // Attendre 2 secondes (2000 millisecondes) avant d'exécuter le code suivant
     });
 }
 }
@@ -82,27 +84,23 @@ window.addEventListener("scroll", function () {
   });
 });
 
-
-
-
 /**
  * Ajouter des elements aux favoris au clique
  */
 if (view.btnFavoris) {
-
   //listener du bouton "favoris"
   view.btnFavoris.addEventListener("click", () => {
     let favoris = JSON.parse(localStorage.getItem("favoris")) || [];
-    
+
     //si l'element est deja dans les favoris, on le supprime
     if (favoris.includes(view.inputRecherche.value)) {
       view.etoileImg.setAttribute("src", "images/star-vide.png");
       view.btnFavoris.setAttribute("title", "Ajouter la recherche aux favoris");
-      favoris = favoris.filter(function(element) {
+      favoris = favoris.filter(function (element) {
         return element !== view.inputRecherche.value;
       });
       localStorage.setItem("favoris", JSON.stringify(favoris));
-      updateFavouriteList()
+      updateFavouriteList();
 
       //si l'element n'est pas dans les favoris, on l'ajoute
     } else {
@@ -110,22 +108,21 @@ if (view.btnFavoris) {
       view.btnFavoris.setAttribute("title", "Retirer la recherche des favoris");
       favoris.push(view.inputRecherche.value);
       localStorage.setItem("favoris", JSON.stringify(favoris));
-        updateFavouriteList()
+      updateFavouriteList();
     }
   });
 }
 
 /**
- * permets de mettre à jours la liste de favoris 
+ * permets de mettre à jours la liste de favoris
  */
 function updateFavouriteList() {
-
   //on enleve les elements deja existants
   while (view.listeFavoris.firstChild) {
     view.listeFavoris.removeChild(view.listeFavoris.firstChild);
   }
   let favoris = JSON.parse(localStorage.getItem("favoris")) || [];
-  
+
   //on ajoute chaque element
   favoris.forEach((element) => {
     let nouvelElement = document.createElement("li");
@@ -133,8 +130,8 @@ function updateFavouriteList() {
     nouvelElement.classList.add("favoris-item"); // Ajouter une classe CSS
 
     nouvelElement.addEventListener("click", () => {
-        view.inputRecherche.value = element;
-    })
+      view.inputRecherche.value = element;
+    });
     ///
 
     let imgSuppression = document.createElement("img");
@@ -143,16 +140,16 @@ function updateFavouriteList() {
     imgSuppression.width = "15";
     imgSuppression.title = "Cliquer pour supprimer le favori";
     imgSuppression.addEventListener("click", () => {
-      favoris = favoris.filter(function(fav) {
+      favoris = favoris.filter(function (fav) {
         return fav !== element;
       });
       localStorage.setItem("favoris", JSON.stringify(favoris));
-      updateFavouriteList()
+      updateFavouriteList();
     });
 
     nouvelElement.appendChild(imgSuppression);
     view.listeFavoris.appendChild(nouvelElement);
-  })
+  });
 }
 //on appelle la fonction au chargement de la page, pour que les favoris soient récupérés dans le localstorage et affichés dès le chargement
 if (view.blocResultat) {
@@ -165,9 +162,8 @@ if (view.blocResultat) {
 
 if (view.inputRecherche) {
   view.inputRecherche.addEventListener("keyup", () => {
-
     let favoris = JSON.parse(localStorage.getItem("favoris")) || [];
-  
+
     if (!favoris.includes(view.inputRecherche.value)) {
       view.etoileImg.setAttribute("src", "images/star-vide.png");
       view.btnFavoris.setAttribute("title", "Ajouter la recherche aux favoris");
@@ -175,9 +171,8 @@ if (view.inputRecherche) {
       view.etoileImg.setAttribute("src", "images/star-pleine.png");
       view.btnFavoris.setAttribute("title", "Retirer la recherche des favoris");
     }
-  })
+  });
 }
-
 
 /**
  * permets l'affichage des catégories, seulement si la page actuelle est la page des catégories
@@ -192,17 +187,34 @@ if (view.blocCategoriesSelect) {
     })
   })
   */
-  
+
   //malgré le fait que l'appel à l'api ci dessus pour les catégories est fonctionnel, à des fin de developpement, il est preferable de tester sur une liste local
-  
-  ["animal","career","celebrity","dev","explicit","fashion","food","history","money","movie","music","political","religion","science","sport","travel"].forEach((category) => {
+
+  [
+    "animal",
+    "career",
+    "celebrity",
+    "dev",
+    "explicit",
+    "fashion",
+    "food",
+    "history",
+    "money",
+    "movie",
+    "music",
+    "political",
+    "religion",
+    "science",
+    "sport",
+    "travel",
+  ].forEach((category) => {
     view.blocCategoriesSelect.appendChild(generateCategeorieElement(category));
-  })
+  });
 
   /**
    * rechercher une blague quand on selectionne une categorie
    */
-  view.blocCategoriesSelect.addEventListener('change', function(event) {
+  view.blocCategoriesSelect.addEventListener("change", function (event) {
     const valeurSelectionnee = event.target.value; //  la valeur sélectionnée
     if (valeurSelectionnee != "-- selectionner --") {
       view.blocCategoriesButton.removeAttribute("disabled");
@@ -230,5 +242,25 @@ view.blocCategoriesButton.addEventListener('click', () => {
   
 }
 
+// Fonction pour afficher la fenêtre modale
+function afficherPopup() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "block";
 
+  // Fermer la modal lorsqu'on clique sur le bouton de fermeture (×)
+  var span = document.getElementsByClassName("close")[0];
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Fermer la modal lorsqu'on clique en dehors de celle-ci
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
+// Appel de la fonction lors du chargement de la page
+window.addEventListener("load", afficherPopup);
 
