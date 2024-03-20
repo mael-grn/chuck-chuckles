@@ -6,7 +6,7 @@ const view = {
   btnRecherche: document.getElementById("btn-lancer-recherche"),
   inputRecherche: document.getElementById("input-text-response"),
   blocResultat: document.getElementById("bloc-resultats"),
-  loadingImage: document.querySelector(".loading"),
+  loadingImage: document.querySelector(".wrapper"),
   btnFavoris: document.getElementById("btn-favoris"),
   etoileImg: document.querySelector("#btn-favoris img"),
   appearsOnScroll: document.querySelectorAll(".appearsOnScroll"),
