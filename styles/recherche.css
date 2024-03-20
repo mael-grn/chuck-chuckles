@@ -196,17 +196,21 @@ main > section {
   animation: grow ease 0.3s;
 }
 
-.card:hover {
-  cursor: pointer;
-  transform: scale(1.05);
+.imgheart {
+  width: 50px;
+  background-color: #c84747;
+  padding: 12px;
+  background-clip: padding-box;
+  border-radius: 20px;
+  border: 1px solid black;
+  transition: all .3s ease;
 }
 
-.card img {
-  width: 70px;
-  height: auto;
-  margin-left: 10px;
-  border-radius: 10px;
+.imgheart:hover {
+  cursor: pointer;
+  padding: 9px;
 }
+
 
 .card:hover > .img {
   transition: 0.5s ease-in-out;

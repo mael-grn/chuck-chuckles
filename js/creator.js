@@ -34,10 +34,23 @@ export function generateJokeElement(joke) {
   textContentDivElement.appendChild(titleParagraphElement);
 
   // Création du span pour la date
-  let dateSpanElement = document.createElement("span");
-  dateSpanElement.setAttribute("class", "span");
-  dateSpanElement.innerText = "Remplacer par les icones"; // Vous pouvez remplacer "Just Now" par la date de création de la blague si nécessaire
-  textContentDivElement.appendChild(dateSpanElement);
+  let heartElement = document.createElement("img");
+  heartElement.setAttribute("class", "imgheart");
+  if (joke.isFavorite()) {
+    heartElement.setAttribute("src", "../images/heart_full.png")
+  } else {
+    heartElement.setAttribute("src", "../images/heart_empty.png")
+  }
+  heartElement.addEventListener("click", () => {
+    if (joke.isFavorite()) {
+      joke.removeFromFavorites();
+      heartElement.setAttribute("src", "../images/heart_empty.png")
+    } else {
+      joke.addToFavorites();
+      heartElement.setAttribute("src", "../images/heart_full.png")
+    }
+  })
+  textContentDivElement.appendChild(heartElement);
 
   // Création du paragraphe pour le contenu de la blague
   let jokeParagraphElement = document.createElement("p");

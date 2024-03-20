@@ -39,6 +39,11 @@ body {
   visibility: hidden;
 }
 
+.visible {
+  animation: grow .3s ease;
+  visibility: visible;
+}
+
 .wrapper {
   width: 200px;
   height: 60px;

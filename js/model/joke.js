@@ -53,6 +53,46 @@ class Joke {
     }
 
     /**
+     * permets d'ajouter la blague aux favoris
+     */
+    addToFavorites() {
+        let jokeList = JSON.parse(localStorage.getItem("favJokes")) || [];
+
+        let joke = {
+            id: this.#id,
+            title: this.#title, 
+            content: this.#content, 
+            dateCreation: this.#dateCreation 
+        };
+
+        jokeList.push(joke);
+        localStorage.setItem("favJokes", JSON.stringify(jokeList));
+    }
+
+    /**
+     * remove la blague des favoris
+     */
+    removeFromFavorites() {
+        let jokeList = JSON.parse(localStorage.getItem("favJokes")) || [];
+
+        const index = jokeList.findIndex(item => item.id === this.#id);
+
+        if (index !== -1) {
+            jokeList.splice(index, 1);
+        }
+
+        localStorage.setItem("favJokes", JSON.stringify(jokeList));
+    }
+
+    /**
+     * retourne si la blague est une blague favorite
+     */
+    isFavorite() {
+        let jokeList = JSON.parse(localStorage.getItem("favJokes")) || [];
+        return jokeList.findIndex(item => item.id === this.#id) != -1;
+    }
+
+    /**
      * 
      * @returns l'url pour acceder directement à la blague
      */

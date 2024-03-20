@@ -14,6 +14,7 @@ const view = {
   blocCategoriesRes: document.querySelector("#bloc-categories #resultats"),
   blocCategoriesButton: document.querySelector("#search-cat button"),
   blocCategoriesSelect: document.querySelector("#bloc-categories select"),
+  blocBlagueFavoris: document.querySelector("#bloc-favoris")
 };
 
 export default view;

@@ -76,6 +76,10 @@ main {
   animation: grow ease 0.3s;
 }
 
+.textBox {
+  width: 100%;
+}
+
 
 .textContent {
   display: flex;
@@ -101,3 +105,17 @@ main {
   border: 1px solid black;
 }
 
+.imgheart {
+  width: 50px;
+  background-color: #c84747;
+  padding: 12px;
+  background-clip: padding-box;
+  border-radius: 20px;
+  border: 1px solid black;
+  transition: all .3s ease;
+}
+
+.imgheart:hover {
+  cursor: pointer;
+  padding: 9px;
+}

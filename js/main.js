@@ -1,6 +1,7 @@
 import Api from "./model/api.js";
 import view from "./view.js";
 import { generateJokeElement, generateCategeorieElement } from "./creator.js";
+import Joke from "./model/joke.js";
 
 const api = new Api();
 
@@ -81,6 +82,7 @@ function appearsOnScroll(element) {
 window.addEventListener("scroll", function () {
   view.appearsOnScroll.forEach((element) => {
     appearsOnScroll(element);
+    
   });
 });
 
@@ -242,25 +244,37 @@ view.blocCategoriesButton.addEventListener('click', () => {
   
 }
 
-// Fonction pour afficher la fenêtre modale
-function afficherPopup() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "block";
+if (view.blocResultat) {
+  // Fonction pour afficher la fenêtre modale
+  function afficherPopup() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
 
-  // Fermer la modal lorsqu'on clique sur le bouton de fermeture (×)
-  var span = document.getElementsByClassName("close")[0];
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  // Fermer la modal lorsqu'on clique en dehors de celle-ci
-  window.onclick = function (event) {
-    if (event.target == modal) {
+    // Fermer la modal lorsqu'on clique sur le bouton de fermeture (×)
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function () {
       modal.style.display = "none";
-    }
-  };
+    };
+
+    // Fermer la modal lorsqu'on clique en dehors de celle-ci
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  }
+
+  
+  // Appel de la fonction lors du chargement de la page
+  window.addEventListener("load", afficherPopup);
+
 }
 
-// Appel de la fonction lors du chargement de la page
-window.addEventListener("load", afficherPopup);
+if (view.blocBlagueFavoris) {
+  let jokeList = JSON.parse(localStorage.getItem("favJokes")) || [];
+  jokeList.forEach((element) => {
+    let joke = new Joke(element.id, element.content, element.dateCreation, element.title);
+    view.blocBlagueFavoris.appendChild(generateJokeElement(joke));
+  })
+}
 
