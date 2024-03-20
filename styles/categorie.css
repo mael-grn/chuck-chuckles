@@ -76,16 +76,13 @@ main {
   animation: grow ease 0.3s;
 }
 
-.card:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
 
 .textContent {
   display: flex;
   width: 100%;
   justify-content: space-between;
   margin-bottom: 20px;
+  font-size: 15px;
 }
 
 .h1 {
