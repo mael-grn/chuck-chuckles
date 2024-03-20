@@ -49,6 +49,8 @@ export function generateJokeElement(joke) {
 }
 
 export function generateCategeorieElement(nomCat) {
+
+  /*
   let divElement = document.createElement("div");
   divElement.setAttribute("class", "categorie");
 
@@ -75,6 +77,12 @@ export function generateCategeorieElement(nomCat) {
     
     
   })
-
   return divElement;
+  */
+
+  let option = document.createElement("option");
+  option.text = nomCat;
+  return option;
+
+  
 }

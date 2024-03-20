@@ -41,7 +41,7 @@ main {
     align-items: center;
     justify-content: center;
     width: 15%;
-    height: 25vh;
+    height: 15vh;
     background-color: #f3b95f;
     transition: all .3s ease;
     overflow: hidden;
