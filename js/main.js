@@ -28,7 +28,7 @@ function displayResult(result) {
  */
 if (view.btnRecherche) {
   view.btnRecherche.addEventListener("click", () => {
-searchJoke();
+    searchJoke();
   });
 
   // Écoute de l'événement "keypress" sur le champ de recherche
@@ -51,7 +51,7 @@ searchJoke();
         displayResult(jokes);
       }, 1000); // Attendre 2 secondes (2000 millisecondes) avant d'exécuter le code suivant
     });
-}
+  }
 }
 
 /**
@@ -82,7 +82,6 @@ function appearsOnScroll(element) {
 window.addEventListener("scroll", function () {
   view.appearsOnScroll.forEach((element) => {
     appearsOnScroll(element);
-    
   });
 });
 
@@ -180,7 +179,9 @@ if (view.inputRecherche) {
  * permets l'affichage des catégories, seulement si la page actuelle est la page des catégories
  */
 if (view.blocCategoriesSelect) {
-  view.blocCategoriesSelect.appendChild(generateCategeorieElement("-- selectionner --"));
+  view.blocCategoriesSelect.appendChild(
+    generateCategeorieElement("-- selectionner --")
+  );
 
   /*
   api.getCategories().then((data) => {
@@ -226,55 +227,61 @@ if (view.blocCategoriesSelect) {
         view.blocCategoriesRes.removeChild(view.blocCategoriesRes.firstChild);
       }
     }
-});
+  });
 
-view.blocCategoriesButton.addEventListener('click', () => {
-  const valeurSelectionnee = view.blocCategoriesSelect.value; //  la valeur sélectionnée
-  console.log("qfsq")
-  if (valeurSelectionnee != "-- selectionner --") {
-    while (view.blocCategoriesRes.firstChild) {
-      view.blocCategoriesRes.removeChild(view.blocCategoriesRes.firstChild);
+  view.blocCategoriesButton.addEventListener("click", () => {
+    const valeurSelectionnee = view.blocCategoriesSelect.value; //  la valeur sélectionnée
+    console.log("qfsq");
+    if (valeurSelectionnee != "-- selectionner --") {
+      while (view.blocCategoriesRes.firstChild) {
+        view.blocCategoriesRes.removeChild(view.blocCategoriesRes.firstChild);
+      }
+      api.getRandomFromCat(valeurSelectionnee).then((joke) => {
+        let jokeElem = generateJokeElement(joke);
+        view.blocCategoriesRes.appendChild(jokeElem);
+      });
     }
-    api.getRandomFromCat(valeurSelectionnee).then((joke) => {
-      let jokeElem = generateJokeElement(joke);
-      view.blocCategoriesRes.appendChild(jokeElem);
-    }) 
-  }
-})
-  
+  });
 }
 
 if (view.blocResultat) {
+
   // Fonction pour afficher la fenêtre modale
   function afficherPopup() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-
-    // Fermer la modal lorsqu'on clique sur le bouton de fermeture (×)
-    var span = document.getElementsByClassName("close")[0];
-    span.onclick = function () {
-      modal.style.display = "none";
-    };
-
-    // Fermer la modal lorsqu'on clique en dehors de celle-ci
-    window.onclick = function (event) {
-      if (event.target == modal) {
+    if (!localStorage.getItem("haveSeenPopup")) {
+      localStorage.setItem("haveSeenPopup", "true")
+      var modal = document.getElementById("myModal");
+      modal.style.display = "block";
+  
+      // Fermer la modal lorsqu'on clique sur le bouton de fermeture (×)
+      var span = document.getElementsByClassName("close")[0];
+      span.onclick = function () {
         modal.style.display = "none";
-      }
-    };
+      };
+  
+      // Fermer la modal lorsqu'on clique en dehors de celle-ci
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    }
+    
   }
 
-  
   // Appel de la fonction lors du chargement de la page
   window.addEventListener("load", afficherPopup);
-
 }
 
 if (view.blocBlagueFavoris) {
   let jokeList = JSON.parse(localStorage.getItem("favJokes")) || [];
   jokeList.forEach((element) => {
-    let joke = new Joke(element.id, element.content, element.dateCreation, element.title);
+    let joke = new Joke(
+      element.id,
+      element.content,
+      element.dateCreation,
+      element.title
+    );
     view.blocBlagueFavoris.appendChild(generateJokeElement(joke));
-  })
+  });
 }
-
