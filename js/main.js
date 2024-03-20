@@ -123,6 +123,7 @@ function updateFavouriteList() {
     nouvelElement.addEventListener("click", () => {
         view.inputRecherche.value = element;
     })
+    ///
 
     let imgSuppression = document.createElement("img");
     imgSuppression.src = "images/croix.svg";
