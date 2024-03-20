@@ -6,7 +6,7 @@ main {
     position: relative;
   }
 
-  main > section {
+  #section-categorie {
     margin-top: 40px;
     flex: 1 1 auto;
     
@@ -16,9 +16,6 @@ main {
     font-size: 2.7em;
   }
   
-  #section-categorie {
-    margin: 20px 0;
-  }
   
   #description {
     color: #666;
@@ -43,15 +40,15 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 15%;
     height: 25vh;
     background-color: #f3b95f;
     transition: all .3s ease;
     overflow: hidden;
 }
 
-.categorie h1 {
-    font-size: 30px;
+#section-categorie .categorie h1 {
+    font-size: 20px;
     transition: all .3s ease;
 }
 
