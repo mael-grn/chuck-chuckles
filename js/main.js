@@ -120,6 +120,10 @@ function updateFavouriteList() {
     nouvelElement.textContent = element;
     nouvelElement.classList.add("favoris-item"); // Ajouter une classe CSS
 
+    nouvelElement.addEventListener("click", () => {
+        view.inputRecherche.value = element;
+    })
+
     let imgSuppression = document.createElement("img");
     imgSuppression.src = "images/croix.svg";
     imgSuppression.alt = "Icone pour supprimer le favori";
@@ -181,7 +185,6 @@ if (view.blocCategories) {
   })
   
 }
-
 
 
 
