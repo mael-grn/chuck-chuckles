@@ -11,7 +11,8 @@ const view = {
   etoileImg: document.querySelector("#btn-favoris img"),
   appearsOnScroll: document.querySelectorAll(".appearsOnScroll"),
   listeFavoris : document.getElementById("liste-favoris"),
-  blocCategories: document.getElementById("bloc-categories"),
+  blocCategories: document.querySelector("#bloc-categories"),
+  blocCategoriesSelect: document.querySelector("#bloc-categories select"),
 };
 
 export default view;

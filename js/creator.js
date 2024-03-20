@@ -50,36 +50,6 @@ export function generateJokeElement(joke) {
 
 export function generateCategeorieElement(nomCat) {
 
-  /*
-  let divElement = document.createElement("div");
-  divElement.setAttribute("class", "categorie");
-
-  // Création du titre avec un numéro incrémentiel
-  let titleCat = document.createElement("h1");
-  titleCat.innerText = nomCat; // Le numéro s'incrémente à chaque nouvelle blague
-  divElement.appendChild(titleCat);
-
-  divElement.addEventListener("click", () => {
-    divElement.classList.toggle("card");
-
-    //si divElement contient la class card, ca veux dire qu'il est pret à afficher une blague
-    if (divElement.classList.contains("card")){
-      api.getRandomFromCat(nomCat).then((joke) => {
-       // Création du paragraphe pour le contenu de la blague
-       let jokeParagraphElement = document.createElement("p");
-       jokeParagraphElement.innerText = joke.getContent();
-       jokeParagraphElement.classList.add('addedContent'); // Marquer l'élément ajouté
-       divElement.appendChild(jokeParagraphElement);
-     }) 
-    } else {
-      divElement.querySelectorAll('.addedContent').forEach(element => element.remove());
-    }
-    
-    
-  })
-  return divElement;
-  */
-
   let option = document.createElement("option");
   option.text = nomCat;
   return option;
