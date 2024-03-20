@@ -27,7 +27,7 @@ function displayResult(result) {
  */
 if (view.btnRecherche) {
   view.btnRecherche.addEventListener("click", () => {
-    searchJoke();
+searchJoke();
   });
 
   // Écoute de l'événement "keypress" sur le champ de recherche
@@ -43,12 +43,12 @@ if (view.btnRecherche) {
     let inputValue = view.inputRecherche.value;
     view.loadingImage.classList.add("loading-visible");
 
-    // On effectue la recherche et on affiche les résultats
+    //on effectue le recherche et on affiche les resultats
     api.searchJoke(inputValue).then((jokes) => {
       view.loadingImage.classList.remove("loading-visible");
       displayResult(jokes);
     });
-  }
+}
 }
 
 /**
@@ -182,7 +182,7 @@ if (view.inputRecherche) {
 /**
  * permets l'affichage des catégories, seulement si la page actuelle est la page des catégories
  */
-if (view.blocCategories) {
+if (view.blocCategoriesSelect) {
   view.blocCategoriesSelect.appendChild(generateCategeorieElement("-- selectionner --"));
 
   /*
@@ -205,13 +205,28 @@ if (view.blocCategories) {
   view.blocCategoriesSelect.addEventListener('change', function(event) {
     const valeurSelectionnee = event.target.value; //  la valeur sélectionnée
     if (valeurSelectionnee != "-- selectionner --") {
-      api.getRandomFromCat(valeurSelectionnee).then((joke) => {
-        view.blocCategories.remove(view.blocCategories.lastElementChild);
-        view.blocCategories.appendChild(generateJokeElement(joke));
-      }) 
+      view.blocCategoriesButton.removeAttribute("disabled");
+    } else {
+      view.blocCategoriesButton.setAttribute("disabled", "true");
+      while (view.blocCategoriesRes.firstChild) {
+        view.blocCategoriesRes.removeChild(view.blocCategoriesRes.firstChild);
+      }
     }
-    
 });
+
+view.blocCategoriesButton.addEventListener('click', () => {
+  const valeurSelectionnee = view.blocCategoriesSelect.value; //  la valeur sélectionnée
+  console.log("qfsq")
+  if (valeurSelectionnee != "-- selectionner --") {
+    while (view.blocCategoriesRes.firstChild) {
+      view.blocCategoriesRes.removeChild(view.blocCategoriesRes.firstChild);
+    }
+    api.getRandomFromCat(valeurSelectionnee).then((joke) => {
+      let jokeElem = generateJokeElement(joke);
+      view.blocCategoriesRes.appendChild(jokeElem);
+    }) 
+  }
+})
   
 }
 

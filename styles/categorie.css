@@ -4,6 +4,7 @@ main {
     display: flex;
     flex-direction: row;
     position: relative;
+    min-height: 80vh;
   }
 
   #section-categorie {
@@ -35,6 +36,28 @@ main {
     flex-direction: column;
 }
 
+#search-cat {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  gap: 10%;
+}
+
+#search-cat button {
+  padding: 0 20px;
+  height: 50px;
+  background-color: #f3b95f;
+  font-size: 16px; /* Taille de la police */
+  border-radius: 50px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+#search-cat button:hover {
+  transform: scale(1.05);
+}
+
 .card {
   width: 100%; /* Adapter la largeur à 100% pour les petits écrans */
   max-width: 600px;
@@ -58,13 +81,26 @@ main {
   transform: scale(1.05);
 }
 
+.textContent {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
 #bloc-categories select {
   width: 25em;
   height: 50px;
   border-radius: 50px;
   padding: 10px;
-  background-color: #f3b95f;
   color: #000; /* Couleur du texte */
   font-size: 16px; /* Taille de la police */
+  border: 1px solid black;
 }
 
