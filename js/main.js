@@ -27,16 +27,28 @@ function displayResult(result) {
  */
 if (view.btnRecherche) {
   view.btnRecherche.addEventListener("click", () => {
+    searchJoke();
+  });
+
+  // Écoute de l'événement "keypress" sur le champ de recherche
+  view.inputRecherche.addEventListener("keypress", (event) => {
+    // Vérification si la touche pressée est "Entrée" (code 13)
+    if (event.key === 'Enter') {
+      searchJoke();
+    }
+  });
+
+  // Fonction pour effectuer la recherche et afficher les résultats
+  function searchJoke() {
     let inputValue = view.inputRecherche.value;
     view.loadingImage.classList.add("loading-visible");
 
-    //on effectue le recherche et on affiche les resultats
+    // On effectue la recherche et on affiche les résultats
     api.searchJoke(inputValue).then((jokes) => {
       view.loadingImage.classList.remove("loading-visible");
       displayResult(jokes);
     });
-
-  });
+  }
 }
 
 /**
