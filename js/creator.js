@@ -37,17 +37,17 @@ export function generateJokeElement(joke) {
   let heartElement = document.createElement("img");
   heartElement.setAttribute("class", "imgheart");
   if (joke.isFavorite()) {
-    heartElement.setAttribute("src", "../images/heart_full.png")
+    heartElement.setAttribute("src", "images/heart_full.png")
   } else {
-    heartElement.setAttribute("src", "../images/heart_empty.png")
+    heartElement.setAttribute("src", "images/heart_empty.png")
   }
   heartElement.addEventListener("click", () => {
     if (joke.isFavorite()) {
       joke.removeFromFavorites();
-      heartElement.setAttribute("src", "../images/heart_empty.png")
+      heartElement.setAttribute("src", "images/heart_empty.png")
     } else {
       joke.addToFavorites();
-      heartElement.setAttribute("src", "../images/heart_full.png")
+      heartElement.setAttribute("src", "images/heart_full.png")
     }
   })
   textContentDivElement.appendChild(heartElement);
