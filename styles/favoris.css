@@ -61,17 +61,13 @@ main {
     justify-content: space-between;
     margin-bottom: 20px;
     font-size: 15px;
+    width: 100%;
+    gap: 20px;
   }
   
-  .h1 {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-  }
 
-  .textBox {
-    width: 100%;
-  }
+
+
 
   .imgheart {
     width: 50px;

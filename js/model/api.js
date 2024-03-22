@@ -139,7 +139,7 @@ class Api {
                         let jokeList = [];
                         let counter = 1;
                         data.result.forEach(element => {
-                            let joke = new Joke(element.id, element.value, element.created_at, "Joke "+counter);
+                            let joke = new Joke(element.id, element.value, element.created_at, element.value.substring(0, 20)+"...");
                             jokeList.push(joke);
                             counter++;
                         });

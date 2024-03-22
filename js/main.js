@@ -18,6 +18,12 @@ function displayResult(result) {
   result.forEach((joke) => {
     //on genere l'element html de la blague
     let jokeElement = generateJokeElement(joke);
+
+    //cas ou il y a une erreur
+    if (joke.getId() < 0) {
+      jokeElement = document.createElement("p");
+      jokeElement.textContent = joke.getContent();
+    }
     //on l'affiche
     view.blocResultat.appendChild(jokeElement);
   });
@@ -190,6 +196,11 @@ if (view.blocCategoriesSelect) {
       view.blocCategoriesSelect.appendChild(generateCategeorieElement(category));
     })
   })
+
+  let firstMessage  = document.createElement("p")
+  firstMessage.textContent = "Commencez par selectionner une catégorie pour obtenir une blague aléatoire !"
+  view.blocCategoriesRes.appendChild(firstMessage);
+
   
 
   //malgré le fait que l'appel à l'api ci dessus pour les catégories est fonctionnel, à des fin de developpement, il est preferable de tester sur une liste local
@@ -286,4 +297,10 @@ if (view.blocBlagueFavoris) {
     );
     view.blocBlagueFavoris.appendChild(generateJokeElement(joke));
   });
+
+  if (jokeList.length == 0) {
+    let noContentMessage = document.createElement("p");
+    noContentMessage.textContent = "Aucune blague n'a été likée pour le moment"
+    view.blocBlagueFavoris.appendChild(noContentMessage);
+  }
 }

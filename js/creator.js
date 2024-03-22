@@ -16,22 +16,15 @@ export function generateJokeElement(joke) {
   let divElement = document.createElement("div");
   divElement.setAttribute("class", "card");
 
-
-  // Création de la div textBox
-  let textBoxDivElement = document.createElement("div");
-  textBoxDivElement.setAttribute("class", "textBox");
-  divElement.appendChild(textBoxDivElement);
-
   // Création de la div textContent
   let textContentDivElement = document.createElement("div");
   textContentDivElement.setAttribute("class", "textContent");
-  textBoxDivElement.appendChild(textContentDivElement);
 
-  // Création du titre avec un numéro incrémentiel
-  let titleParagraphElement = document.createElement("p");
-  titleParagraphElement.setAttribute("class", "h1");
-  titleParagraphElement.innerText = joke.getTitle(); // Le numéro s'incrémente à chaque nouvelle blague
-  textContentDivElement.appendChild(titleParagraphElement);
+  // Création du paragraphe pour le contenu de la blague
+  let jokeParagraphElement = document.createElement("p");
+  jokeParagraphElement.setAttribute("class", "p");
+  jokeParagraphElement.innerText = joke.getContent();
+  textContentDivElement.appendChild(jokeParagraphElement);
 
   // Création du span pour la date
   let heartElement = document.createElement("img");
@@ -52,11 +45,9 @@ export function generateJokeElement(joke) {
   })
   textContentDivElement.appendChild(heartElement);
 
-  // Création du paragraphe pour le contenu de la blague
-  let jokeParagraphElement = document.createElement("p");
-  jokeParagraphElement.setAttribute("class", "p");
-  jokeParagraphElement.innerText = joke.getContent();
-  textBoxDivElement.appendChild(jokeParagraphElement);
+  
+
+  divElement.appendChild(textContentDivElement);
 
   return divElement;
 }

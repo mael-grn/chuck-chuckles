@@ -76,24 +76,17 @@ main {
   animation: grow ease 0.3s;
 }
 
-.textBox {
-  width: 100%;
-}
 
 
 .textContent {
   display: flex;
-  width: 100%;
   justify-content: space-between;
   margin-bottom: 20px;
   font-size: 15px;
+  width: 100%;
+  gap: 20px;
 }
 
-.h1 {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-}
 
 #bloc-categories select {
   width: 25em;
