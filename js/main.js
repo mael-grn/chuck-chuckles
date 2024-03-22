@@ -183,16 +183,16 @@ if (view.blocCategoriesSelect) {
     generateCategeorieElement("-- selectionner --")
   );
 
-  /*
+  
   api.getCategories().then((data) => {
     data.forEach((category) => {
       view.blocCategoriesSelect.appendChild(generateCategeorieElement(category));
     })
   })
-  */
+  
 
   //malgré le fait que l'appel à l'api ci dessus pour les catégories est fonctionnel, à des fin de developpement, il est preferable de tester sur une liste local
-
+  /*
   [
     "animal",
     "career",
@@ -213,6 +213,7 @@ if (view.blocCategoriesSelect) {
   ].forEach((category) => {
     view.blocCategoriesSelect.appendChild(generateCategeorieElement(category));
   });
+  */
 
   /**
    * rechercher une blague quand on selectionne une categorie
