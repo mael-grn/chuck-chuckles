@@ -30,125 +30,88 @@
     </nav>
 
     <main>
-       <!-- Modal -->
+      <!-- Modal -->
       <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <p>Attention : Certaines blagues peuvent ne pas convenir à un jeune public.</p>
+          <p>
+            Attention : Certaines blagues peuvent ne pas convenir à un jeune
+            public.
+          </p>
         </div>
       </div>
-    <!-- Section de recherche (avec résultats) -->
-    <section id="section-recherche">
-      <div id="entête">
-        <h1>Recherche</h1>
-        <p id="description">
-          Utilisez cette page pour découvrir des blagues sur Chuck Norris.
-          <br />
-          Entrez un mot-clé ou sélectionnez une catégorie pour commencer votre
-          recherche.
-        </p>
-      </div>
-      <div id="bloc-recherche">
-        <div class="search">
-          <input
-            id="input-text-response"
-            type="text"
-            class="search__input"
-            placeholder="Commencez à rechercher une blague"
-          />
-          <button class="search__button" id="btn-lancer-recherche">
-            <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
-              <g>
-                <path
-                  d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
-                ></path>
-              </g>
-            </svg>
+      <!-- Section de recherche (avec résultats) -->
+      <section id="section-recherche">
+        <div id="entête">
+          <h1>Recherche</h1>
+          <p id="description">
+            Utilisez cette page pour découvrir des blagues sur Chuck Norris.
+            <br />
+            Entrez un mot-clé ou sélectionnez une catégorie pour commencer votre
+            recherche.
+          </p>
+        </div>
+        <div id="bloc-recherche">
+          <div class="search">
+            <input
+              id="input-text-response"
+              type="text"
+              class="search__input"
+              placeholder="Commencez à rechercher une blague"
+            />
+            <button class="search__button" id="btn-lancer-recherche">
+              <svg class="search__icon" aria-hidden="true" viewBox="0 0 24 24">
+                <g>
+                  <path
+                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          <button
+            id="btn-favoris"
+            type="button"
+            title="Ajouter la recherche aux favoris"
+          >
+            <!-- Icone étoile vide
+            (qui indique que la recherche ne fait pas partie des favoris) -->
+            <img src="images/star-vide.png" alt="Etoile vide" width="30" />
+
+            <!-- (Les 2 icones d'étoile provenant de flaticon.com) -->
           </button>
         </div>
 
-        <button
-          id="btn-favoris"
-          type="button"
-          title="Ajouter la recherche aux favoris"
-        >
-          <!-- Icone étoile vide
-            (qui indique que la recherche ne fait pas partie des favoris) -->
+        <!-- Résultats de recherche -->
+        <div id="bloc-gif-attente">
           <img
-            src="images/star-vide.png"
-            alt="Etoile vide"
-            width="30"
+            src="images/attente-ajax.gif"
+            alt="GIF Attente de résultats"
+            width="50"
           />
-
-          <!-- Icone étoile pleine
-            (qui indique que la recherche fait partie des favoris) -->
-          <!-- <img src="images/etoile-pleine.svg" alt="Etoile pleine" width="22" > -->
-
-          <!-- (Les 2 icones d'étoile provenant de flaticon.com) -->
-        </button>
-      </div>
-
-      <!-- Résultats de recherche -->
-      <div id="bloc-gif-attente">
-        <img
-          src="images/attente-ajax.gif"
-          alt="GIF Attente de résultats"
-          width="50"
-        />
-      </div>
-      <div id="bloc-resultats">
-        <p>Commencez à rechercher pour afficher des resultats</p>
-         <!--<img src="./images/loading.gif" alt="chargement" class="loading">-->
-         <div class="wrapper">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="shadow"></div>
-          <div class="shadow"></div>
-          <div class="shadow"></div>
         </div>
-      </div>
-    </section>
-
-
-    <!-- Section des recherches favorites -->
-    <section id="section-favoris">
-      <h2>Recherches favorites</h2>
-      <p>Cliquer sur une recherche favorite ci-dessus pour la relancer :</p>
-      <ul id="liste-favoris">
-        <!--<li>
-          <span title="Cliquer pour relancer la recherche">Grenoble</span>
-          <img
-            src="images/croix.svg"
-            alt="Icone pour supprimer le favori"
-            width="15"
-            title="Cliquer pour supprimer le favori"
-          />
-        </li>
-        <li>
-          <span title="Cliquer pour relancer la recherche">Lyon</span>
-          <img
-            src="images/croix.svg"
-            alt="Icone pour supprimer le favori"
-            width="15"
-            title="Cliquer pour supprimer le favori"
-          />
-        </li>
-        <li>
-          <span title="Cliquer pour relancer la recherche">Web</span>
-          <img
-            src="images/croix.svg"
-            alt="Icone pour supprimer le favori"
-            width="15"
-            title="Cliquer pour supprimer le favori"
-          />
-        </li>
-      </ul>-->
-      <!--<p class="info-vide">(Aucune recherche favorite)</p>-->
-    </section>
-    
-  </main>
-  <hr />
+        <div id="bloc-resultats">
+          <p>Commencez à rechercher pour afficher des resultats</p>
+          <!--<img src="./images/loading.gif" alt="chargement" class="loading">-->
+          <div class="wrapper">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+            <div class="shadow"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Section des recherches favorites -->
+      <section id="section-favoris">
+        <h2>Recherches favorites</h2>
+        <p>Cliquer sur une recherche favorite ci-dessus pour la relancer :</p>
+        <ul id="liste-favoris"></ul>
+      </section>
+    </main>
+    <hr />
     <footer>
       <p>© 2023 Relume. Tous droits réservés.</p>
       <ul class="list-footer">
