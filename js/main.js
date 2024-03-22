@@ -177,6 +177,7 @@ if (view.inputRecherche) {
 
 /**
  * permets l'affichage des catégories, seulement si la page actuelle est la page des catégories
+ * 
  */
 if (view.blocCategoriesSelect) {
   view.blocCategoriesSelect.appendChild(
