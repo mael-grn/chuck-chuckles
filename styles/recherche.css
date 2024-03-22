@@ -212,22 +212,12 @@ main > section {
 }
 
 
-.card:hover > .img {
-  transition: 0.5s ease-in-out;
-  background: linear-gradient(#9198e5, #712020);
-}
-
-.textBox {
-  flex: 1;
-  margin-left: 10px;
-  color: white;
-  font-family: "Poppins", sans-serif;
-}
-
 .textContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  gap: 20px;
 }
 
 .span {
